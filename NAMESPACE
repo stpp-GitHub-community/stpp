@@ -4,7 +4,6 @@ exportPattern("^[^\\.]")
 import(splancs)
 import(spatstat)
 import(KernSmooth)
-import(plot3D)
 import(rgl)
 import(rpanel)
 
