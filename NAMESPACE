@@ -1,0 +1,15 @@
+useDynLib(stpp,.registration=TRUE)
+exportPattern("^[^\\.]")
+
+import(splancs)
+import(spatstat)
+import(KernSmooth)
+import(plot3D)
+import(rgl)
+import(rpanel)
+
+importFrom("grDevices", "chull", "colorRampPalette", "dev.list","dev.new", "dev.off", "gray", "grey", "heat.colors", "rgb")
+importFrom("graphics", "axTicks", "axis", "box", "contour", "image","par", "persp", "plot", "points", "title")
+importFrom("stats", "dnorm", "fft", "median", "rexp", "rnorm", "rpois","runif", "time") 
+
+S3method(plot,stpp)

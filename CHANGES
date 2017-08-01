@@ -1,0 +1,9 @@
+CHANGES IN stpp VERSION 2.0.1
+
+* STIKhat and PCFhat can now consider several edge correction factors
+
+* plotK and plotPCF modified accordingly
+
+* Fixed problem in the Gneiting covariance function (rlgcp)
+ 
+ 
