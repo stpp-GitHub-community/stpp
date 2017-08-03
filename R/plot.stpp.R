@@ -1,11 +1,11 @@
-plot.stpp <- function(xyt, s.region=NULL, t.region=NULL, mark=FALSE, mark.cexmin=0.4, mark.cexmax=1.2, mark.col=1, ...){
+plot.stpp <- function(x, s.region=NULL, t.region=NULL, mark=FALSE, mark.cexmin=0.4, mark.cexmax=1.2, mark.col=1, ...){
   
-  verifyclass(xyt,"stpp")
+  verifyclass(x,"stpp")
   
-  if (missing(s.region)) s.region <- sbox(xyt[,1:2], xfrac=0.01, yfrac=0.01)
+  if (missing(s.region)) s.region <- sbox(x[,1:2], xfrac=0.01, yfrac=0.01)
   if (missing(t.region)) 
   {
-    xr = range(xyt[,3], na.rm = TRUE)
+    xr = range(x[,3], na.rm = TRUE)
     xw = diff(xr)
     t.region <- c(xr[1]- 0.01 * xw, xr[2] + 0.01 * xw)
   } 
@@ -22,20 +22,20 @@ plot.stpp <- function(xyt, s.region=NULL, t.region=NULL, mark=FALSE, mark.cexmin
   else
     bdry = owin(poly = list(x = s.region[,1][length(s.region[,1]):1], y = s.region[,2][length(s.region[,1]):1]))
   
-if (inherits(xyt,"stpp")==TRUE) 
+if (inherits(x,"stpp")==TRUE) 
 	{ 
 	if (mark==FALSE)
 	  {
 	  par(mfrow=c(1,2),pty="s")
 	  if (is.null(s.region))	
-	  plot(xyt[,1:2],main="xy-locations",...)
+	  plot(x[,1:2],main="xy-locations",...)
 	  else
 		{
 		  polymap(s.region,xlab="x",ylab="y")
-		  points(xyt[,1:2],...)
+		  points(x[,1:2],...)
 		  title("xy-locations")	 
 		}
-	  plot(sort(xyt[,3]),1:length(xyt[,3]),type="l",xlab="t",ylab="",main="cumulative number",las=1,xlim=t.region)
+	  plot(sort(x[,3]),1:length(x[,3]),type="l",xlab="t",ylab="",main="cumulative number",las=1,xlim=t.region)
 	   }
 	if (mark==TRUE)
 	 {
