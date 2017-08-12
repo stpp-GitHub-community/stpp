@@ -4,6 +4,18 @@ Many of the models encountered in applications of point process methods to the s
 
 ## This is the development version
 
+**Installation guide**
+
+The easiest way to install the development version of msfstpp from github is using the devtools package which can be installed run the next command:
+```
+install.packages('devtools', dependencies=TRUE)
+```
+and thereafter run the commands:
+```
+require(devtools)
+devtools::install_github('stpp-GitHub-community/stpp')
+```
+
 ## References
 
 - [Gabriel E., Rowlingson B., Diggle P. (2013). stpp: an R package for plotting, simulating and analyzing Spatio-Temporal Point Patterns. *Journal of Statistical Software*, **53**(2), 1-29.](https://www.jstatsoft.org/article/view/v053i02/v53i02.pdf)
