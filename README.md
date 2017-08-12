@@ -6,7 +6,7 @@ Many of the models encountered in applications of point process methods to the s
 
 **Installation guide**
 
-The easiest way to install the development version of msfstpp from github is using the devtools package which can be installed run the next command:
+The easiest way to install the development version of stpp from github is using the devtools package which can be installed run the next command:
 ```
 install.packages('devtools', dependencies=TRUE)
 ```
