@@ -10,17 +10,20 @@ plot.stpp <- function(x, s.region=NULL, t.region=NULL, mark=FALSE, mark.cexmin=0
     t.region <- c(xr[1]- 0.01 * xw, xr[2] + 0.01 * xw)
   } 
   
-  nedges <- length(s.region[,1])
-  s.region[,2] <- s.region[,2] - min(s.region[,2])
+  xp <- s.region[,1]
+  yp <- s.region[,2]
+  nedges <- length(xp)
+  yp <- yp - min(yp) 
   nxt <- c(2:nedges, 1)
-  dx <- s.region[,1][nxt] - s.region[,1]
-  ym <- (s.region[,2] + s.region[,2][nxt])/2
+  dx <- xp[nxt] - xp
+  ym <- (yp + yp[nxt])/2
   Areaxy <- -sum(dx * ym)
   
   if (Areaxy > 0){
-    bdry = owin(poly = list(x = s.region[,1], y = s.region[,2]))}
-  else
-    bdry = owin(poly = list(x = s.region[,1][length(s.region[,1]):1], y = s.region[,2][length(s.region[,1]):1]))
+    bdry <- owin(poly = list(x = s.region[,1], y = s.region[,2]))
+  }else{
+    bdry <- owin(poly = list(x = s.region[,1][length(s.region[,1]):1], y = s.region[,2][length(s.region[,1]):1]))
+  }
   
 if (inherits(x,"stpp")==TRUE) 
 	{ 
