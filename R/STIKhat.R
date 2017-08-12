@@ -78,8 +78,7 @@ STIKhat <- function(xyt, s.region, t.region, dist, times, lambda, correction = "
   polyy <- c(s.region[, 2], s.region[1, 2])
   hkhat <- array(0, dim = c(ndist, ntimes, 5))
 
-  if(missing(lambda))
-    {
+  if(missing(lambda)){
       misl <- 1
       lambda <- rep(npt/area, npt)
     }
@@ -98,9 +97,8 @@ STIKhat <- function(xyt, s.region, t.region, dist, times, lambda, correction = "
   pppxy = ppp(x = ptsx, y = ptsy, window = bdry)
 
 #  correction=="border" and "modified border"
-
-   if(any(correction=="border")|any(correction=="modified.border"))
-   {
+   if(any(correction=="border")|any(correction=="modified.border")){
+     
    bi=bdist.points(pppxy)
    bj=.bdist.times(xytimes,t.region)
 
@@ -114,7 +112,6 @@ STIKhat <- function(xyt, s.region, t.region, dist, times, lambda, correction = "
    }
 
 # correction=="translate"
- 	
   if(any(correction=="translate"))
   {
   wtt = .overlap.tint(xytimes,t.region)
@@ -141,9 +138,9 @@ STIKhat <- function(xyt, s.region, t.region, dist, times, lambda, correction = "
   hkhat[,,c(1,2,5)]=hkhat[,,c(1,2,5)]/area
     	
   Khpp <- matrix(0,ncol=length(times),nrow=length(dist))
-  for(i in 1:length(dist))Khpp[i,]<-pi*(dist[i]^2)*times
-  
-  if (infectious==TRUE) {Ktheo <- Khpp}
+  for(i in 1:length(dist)) Khpp[i,] <- pi*(dist[i]^2)*times
+   
+  if (infectious==TRUE){Ktheo <- Khpp}
   else Ktheo <- 2*Khpp
 
   if(length(id)==1) Khat=as.array(hkhat[,,id])
