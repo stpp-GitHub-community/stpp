@@ -6,14 +6,14 @@ Many of the models encountered in applications of point process methods to the s
 
 **Installation guide**
 
-The easiest way to install the development version of stpp from github is using the devtools package which can be installed run the next command:
+The easiest way to install the development version of `stpp` from GitHub is using the `remotes` package which can be installed run the next command:
 ```
-install.packages('devtools', dependencies=TRUE)
+install.packages('remotes')
 ```
 and thereafter run the commands:
 ```
-require(devtools)
-devtools::install_github('stpp-GitHub-community/stpp')
+require(remotes)
+install_github('stpp-GitHub-community/stpp')
 ```
 
 ## References
