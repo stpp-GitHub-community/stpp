@@ -1,5 +1,4 @@
-PCFhat <-function(xyt, s.region, t.region, dist, times, lambda, ks = "box", hs, kt = "box", ht, correction = "isotropic") 
-{
+PCFhat <-function(xyt, s.region, t.region, dist, times, lambda, ks = "box", hs, kt = "box", ht, correction = "isotropic"){
 
   verifyclass(xyt,"stpp")
   
@@ -20,7 +19,7 @@ PCFhat <-function(xyt, s.region, t.region, dist, times, lambda, ks = "box", hs, 
   
   if (missing(s.region)) 
     s.region <- sbox(xyt[, 1:2], xfrac = 0.01, yfrac = 0.01)
-  if (missing(t.region)) {
+  if (missing(t.region)){
     xr = range(xyt[, 3], na.rm = TRUE)
     xw = diff(xr)
     t.region <- c(xr[1] - 0.01 * xw, xr[2] + 0.01 * xw)
@@ -28,19 +27,22 @@ PCFhat <-function(xyt, s.region, t.region, dist, times, lambda, ks = "box", hs, 
   bsupt <- max(t.region)
   binft <- min(t.region)
   
-  nedges <- length(s.region[,1])
-  s.region[,2] <- s.region[,2] - min(s.region[,2])
+  xp <- s.region[,1]
+  yp <- s.region[,2]
+  nedges <- length(xp)
+  yp <- yp - min(yp) 
   nxt <- c(2:nedges, 1)
-  dx <- s.region[,1][nxt] - s.region[,1]
-  ym <- (s.region[,2] + s.region[,2][nxt])/2
+  dx <- xp[nxt] - xp
+  ym <- (yp + yp[nxt])/2
   Areaxy <- -sum(dx * ym)
   
   if (Areaxy > 0){
-    bdry = owin(poly = list(x = s.region[,1], y = s.region[,2]))}
-  else
-    bdry = owin(poly = list(x = s.region[,1][length(s.region[,1]):1], y = s.region[,2][length(s.region[,1]):1]))
+    bdry <- owin(poly = list(x = s.region[,1], y = s.region[,2]))
+  }else{
+    bdry <- owin(poly = list(x = s.region[,1][length(s.region[,1]):1], y = s.region[,2][length(s.region[,1]):1]))
+  }
   
-  if (missing(dist)) {
+  if (missing(dist)){
     rect = as.rectangle(bdry)
     maxd = min(diff(rect$xrange), diff(rect$yrange))/4
     dist = make.even.breaks(maxd, bstep = maxd/512)$r
@@ -56,8 +58,12 @@ PCFhat <-function(xyt, s.region, t.region, dist, times, lambda, ks = "box", hs, 
   if (times[1] == 0) 
     times = times[-1]
   
-  pts <- xyt[, 1:2]
-  xytimes <- xyt[, 3]
+  ok <- inside.owin(xyt[,1],xyt[,2],w=bdry)
+  xyt.ins <- data.frame(x=xyt[,1][ok],y=xyt[,2][ok],t=xyt[,3][ok])
+  xyt.in <- intim(xyt.ins,t.region)
+  
+  pts <- xyt.in[,1:2]
+  xytimes <- xyt.in[,3]
   ptsx <- pts[, 1]
   ptsy <- pts[, 2]
   ptst <- xytimes
@@ -100,7 +106,7 @@ PCFhat <-function(xyt, s.region, t.region, dist, times, lambda, ks = "box", hs, 
     kt = 3
   else if (kt == "biweight") 
     kt = 4
-  if (missing(lambda)) {
+  if (missing(lambda)){
     misl <- 1
     lambda <- rep(npt/area, npt)
   }
@@ -115,17 +121,24 @@ PCFhat <-function(xyt, s.region, t.region, dist, times, lambda, ks = "box", hs, 
   options(warn = -1)
   
   pppxy = ppp(x = ptsx, y = ptsy, window = bdry)
+  
+  #  correction=="border" and "modified border"
   if (any(correction == "border") | any(correction == "modified.border")) {
+    
     bi = bdist.points(pppxy)
     bj = .bdist.times(xytimes, t.region)
+    
     for (i in 1 : ndist) {
       for (j in 1 : ntimes) {
         wbi[, i, j] = (bi > dist[i]) * (bj > times[j])/sum((bi > dist[i]) * (bj > times[j])/lambda)
         wbimod[, i, j] = (bi > dist[i]) * (bj > times[j])/(eroded.areas(bdry, dist[i]) * .eroded.areat(t.region, times[j]))
       }
     }
-    wbi[is.na(wbi)] = 0
+    wbi[is.na(wbi)] <- 0
+    wbimod[is.na(wbimod)] <- 0
   }
+
+  # correction=="translate"
   if (any(correction == "translate")) {
     wtt = .overlap.tint(xytimes, t.region)
     wts = edge.Trans(pppxy)

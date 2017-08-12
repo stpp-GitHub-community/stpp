@@ -96,7 +96,7 @@ STIKhat <- function(xyt, s.region, t.region, dist, times, lambda, correction = "
   
   pppxy = ppp(x = ptsx, y = ptsy, window = bdry)
 
-#  correction=="border" and "modified border"
+  #  correction=="border" and "modified border"
    if(any(correction=="border")|any(correction=="modified.border")){
      
    bi=bdist.points(pppxy)
@@ -111,7 +111,7 @@ STIKhat <- function(xyt, s.region, t.region, dist, times, lambda, correction = "
 	    wbimod[is.na(wbimod)] <- 0
    }
 
-# correction=="translate"
+  # correction=="translate"
   if(any(correction=="translate"))
   {
   wtt = .overlap.tint(xytimes,t.region)
