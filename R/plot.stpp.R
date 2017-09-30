@@ -1,45 +1,27 @@
-plot.stpp <- function(x, s.region=NULL, t.region=NULL, mark=FALSE, mark.cexmin=0.4, mark.cexmax=1.2, mark.col=1, ...){
+plot.stpp <- function(x, s.region=NULL, t.region=NULL, scatter=FALSE, mark=FALSE, mark.cexmin=0.4, mark.cexmax=1.2, mark.col=1, ...){
   
   verifyclass(x,"stpp")
   
-  if (missing(s.region)) s.region <- sbox(x[,1:2], xfrac=0.01, yfrac=0.01)
-  if (missing(t.region)) 
-  {
-    xr = range(x[,3], na.rm = TRUE)
-    xw = diff(xr)
-    t.region <- c(xr[1]- 0.01 * xw, xr[2] + 0.01 * xw)
-  } 
-  
-  xp <- s.region[,1]
-  yp <- s.region[,2]
-  nedges <- length(xp)
-  yp <- yp - min(yp) 
-  nxt <- c(2:nedges, 1)
-  dx <- xp[nxt] - xp
-  ym <- (yp + yp[nxt])/2
-  Areaxy <- -sum(dx * ym)
-  
-  if (Areaxy > 0){
-    bdry <- owin(poly = list(x = s.region[,1], y = s.region[,2]))
-  }else{
-    bdry <- owin(poly = list(x = s.region[,1][length(s.region[,1]):1], y = s.region[,2][length(s.region[,1]):1]))
-  }
-  
 if (inherits(x,"stpp")==TRUE) 
 	{ 
+  
+  if (scatter==TRUE)
+    scatter3D(x[,1],x[,2],x[,3],...)
+  else{
+
 	if (mark==FALSE)
 	  {
 	  par(mfrow=c(1,2),pty="s")
 	  if (is.null(s.region))	
 	  plot(x[,1:2],main="xy-locations",...)
 	  else
-		{
-		  polymap(s.region,xlab="x",ylab="y")
+		{ polymap(s.region,xlab="x",ylab="y")
 		  points(x[,1:2],...)
 		  title("xy-locations")	 
 		}
 	  plot(sort(x[,3]),1:length(x[,3]),type="l",xlab="t",ylab="",main="cumulative number",las=1,xlim=t.region)
-	   }
+	}
+  
 	if (mark==TRUE)
 	 {
 	  l=dim(x)[1]
@@ -74,11 +56,13 @@ if (inherits(x,"stpp")==TRUE)
 		      points(x[,1:2],col=COL,cex=CEX,...)	 
 		  }
          }
-	 }	
-}
+	  }	
+   }
+  }
   else
   {warning("x should be of class 'stpp'")}
 }
+  
 
 getS3method("plot", "stpp", optional = FALSE)
 

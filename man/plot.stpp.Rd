@@ -5,12 +5,11 @@
 \title{Plot for spatio-temporal point objects}
 
 \description{
-This function plot either xy-locations and cumulative distribution of the times
-or xy-locations with time treated as a quantitative mark attached to each location.}
+This function plot either xy-locations and cumulative distribution of the times, also xy-locations with time treated as a quantitative mark attached to each location and  space-time 3D scatter plot of a spatio-temporal point pattern.}
 
 \usage{
-\method{plot}{stpp}(x, s.region=NULL, t.region=NULL, mark=FALSE, mark.cexmin=0.4,
-     mark.cexmax=1.2, mark.col=1, ...)
+\method{plot}{stpp}(x, s.region=NULL, t.region=NULL, scatter=FALSE, mark=FALSE, 
+        mark.cexmin=0.4, mark.cexmax=1.2, mark.col=1, ...)
 } 
 
 \arguments{
@@ -21,6 +20,9 @@ or xy-locations with time treated as a quantitative mark attached to each locati
   \item{t.region}{vector containing the minimum and maximum values of
   the time interval. If \code{t.region} is missing,  the default limits are
   considered.}
+  \item{scatter}{Logical. If \code{FALSE} (default), xy-location distribution
+  of the times are plotted. If \code{TRUE}, the spatio-temporal 3D scatter are 
+  plotted.}
   \item{mark}{Logical. If \code{FALSE} (default), xy-locations and cumulative 
   distribution of the times are plotted. If \code{TRUE}, the time is treated as 
   a quantitative mark attached to each location, and the locations are plotted 
@@ -43,7 +45,7 @@ None}
  \code{\link{as.3dpoints}} for creating data in spatio-temporal point format.
  }
 
-\author{Edith Gabriel <edith.gabriel@univ-avignon.fr>.}
+\author{Edith Gabriel and Francisco J. Rodriguez-Cortes <edith.gabriel@univ-avignon.fr>.}
 
 \references{
 Gabriel E., Rowlingson B., Diggle P. (2013)

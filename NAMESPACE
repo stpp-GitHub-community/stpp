@@ -6,6 +6,7 @@ import(spatstat)
 import(KernSmooth)
 import(rgl)
 import(rpanel)
+import(plot3D)
 
 importFrom("grDevices", "chull", "colorRampPalette", "dev.list","dev.new", "dev.off", "gray", "grey", "heat.colors", "rgb")
 importFrom("graphics", "axTicks", "axis", "box", "contour", "image","par", "persp", "plot", "points", "title")
