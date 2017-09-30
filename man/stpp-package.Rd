@@ -18,6 +18,8 @@ The \code{stpp} package depends upon some other packages:
 \code{KernSmooth}: functions for kernel smoothing for Wand & Jones (1995)
 
 \code{plot3D}: Tools for plotting 3-D and 2-D data
+
+\code{ggplot2}: Elegant Graphics for Data Analysis
 }
 
 \details{
@@ -41,7 +43,9 @@ Following is a summary of the main functions and the dataset in the \code{stpp} 
 \item \code{\link{rinter}}: simulate an interaction (inhibition or contagious) point process,
 \item \code{\link{rlgcp}}: simulate a log-Gaussian Cox point process,
 \item \code{\link{rpcp}}: simulate a Poisson cluster point process,
-\item \code{\link{rpp}}: simulate a Poisson point process.
+\item \code{\link{rpp}}: simulate a Poisson point process,
+\item \code{\link{stdcpp}}: simulate a double-cluster point process,
+\item \code{\link{sthpcpp}}: simulate a hot-spot point process.
 }
 
 \emph{To analyse spatio-temporal point patterns}

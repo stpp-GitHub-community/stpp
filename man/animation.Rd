@@ -12,7 +12,7 @@ scales=TRUE, border.frac=0.05, add=FALSE)
 }
 
 \arguments{
-  \item{xyt}{data-matrix containing the (x,y,t)-coordinates. }
+  \item{xyt}{data-matrix containing the \code{(x,y,t)}-coordinates. }
   \item{s.region}{two-column matrix specifying polygonal region containing
   all data-locations \code{xyt[,1:2]}.
    If missing, \code{s.region} is the bounding box of \code{xyt[,1:2]}.}
