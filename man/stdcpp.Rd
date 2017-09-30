@@ -45,7 +45,7 @@ Stoyan, D., Rodriguez-Cortes, F. J., Mateu, J., and Gille, W. (2017). Mark vario
 Xe <- stdcpp(lambp=20, a=0.12, b=0.09, c=0.07, mu=100)
 plot(Xe$xyt)
 
-# plot scatterplot3d
+# Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
 plot(Xe$xyt,scatter=TRUE,theta=45,phi=30,main="Spatio-temporal point pattern",
 xlab="\n x",ylab="\n y",zlab="\n t",ticktype="detailed",col="black")
@@ -54,7 +54,7 @@ xlab="\n x",ylab="\n y",zlab="\n t",ticktype="detailed",col="black")
 Xb <- stdcpp(lambp=20, a=0.05, b=0.05, c=0.05, mu=100)
 plot(Xb$xyt)
 
-# plot scatterplot3d
+# Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
 plot(Xb$xyt,scatter=TRUE,theta=45,phi=30,
 main="Spatio-temporal point pattern",xlab="\n x",ylab="\n y",
@@ -66,7 +66,7 @@ Northcumbria <- northcumbria/1000
 X <- stdcpp(lambp=0.00004, a=10,b=10,c=10, mu=120, s.region=Northcumbria, t.region=c(0,200))
 plot(X$xyt,s.region=Northcumbria)
 
-# plot scatterplot3d
+# Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
 plot(X$xyt,scatter=TRUE,theta=45,phi=30,
 main="Spatio-temporal point pattern",xlab="\n x",ylab="\n y",
