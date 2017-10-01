@@ -1,9 +1,9 @@
 CHANGES IN stpp VERSION 2.0.1
 
-* STIKhat and PCFhat can now consider several edge correction factors
+* plot.stpp are modified to plotting space-time 3D scatter
 
-* plotK and plotPCF modified accordingly
-
-* Fixed problem in the Gneiting covariance function (rlgcp)
+* Fixed problem in functions (rlgcp) and (rpp)
  
+* Two new space-time cluster models have been included
  
+* STIKhat and PCFhat have been improved to verify the assumptions space-time of duplicate points
