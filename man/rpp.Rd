@@ -89,7 +89,8 @@ Ls = kernel2d(as.points(fmd[,1:2]), northcumbria, h, nx=100, ny=100)
 Lt = dim(fmd)[1]*density(fmd[,3], n=200)$y
 Lst=array(0,dim=c(100,100,200))
 for(k in 1:200) Lst[,,k] <- Ls$z*Lt[k]/dim(fmd)[1]
-#ipp2 = rpp(lambda=Lst, s.region=northcumbria, t.region=c(1,200)),discrete.time=TRUE)
+#ipp2 = rpp(lambda=Lst, s.region=northcumbria, t.region=c(1,200), 
+#discrete.time=TRUE)
 \dontrun{           
 par(mfrow=c(1,1))
 image(Ls$x, Ls$y, Ls$z, col=grey((1000:1)/1000)); polygon(northcumbria)
