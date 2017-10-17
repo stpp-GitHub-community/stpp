@@ -42,7 +42,7 @@ Illian, J B., Penttinen, A., Stoyan, H. and Stoyan, D. (2008). Statistical Analy
 
 Stoyan, D., Rodriguez-Cortes, F. J., Mateu, J., and Gille, W. (2017). Mark variograms for spatio-temporal point processes. Spatial Statistics. 20, 125-147.
 }
-\author{Edith Gabriel, Francisco J. Rodriguez Cortes <cortesf@uji.es> }
+\author{Francisco J. Rodriguez Cortes <cortesf@uji.es>, Edith Gabriel}
 
 \examples{
 ## Not run:
