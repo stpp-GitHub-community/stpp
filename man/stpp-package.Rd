@@ -50,7 +50,8 @@ Following is a summary of the main functions and the dataset in the \code{stpp} 
 
 \itemize{
 \item \code{\link{PCFhat}}: space-time inhomogeneous pair correlation function,
-\item \code{\link{STIKhat}}: space-time inhomogeneous K-function.
+\item \code{\link{STIKhat}}: space-time inhomogeneous K-function,
+\item \code{\link{ASTIKhat}}: Anisotropic space-time inhomogeneous K-function.
 }
 
 \emph{Dataset}

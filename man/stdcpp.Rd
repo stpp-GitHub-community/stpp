@@ -47,8 +47,7 @@ plot(Xe$xyt)
 
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
-plot(Xe$xyt,scatter=TRUE,theta=45,phi=30,main="Spatio-temporal point pattern",
-xlab="\n x",ylab="\n y",zlab="\n t",ticktype="detailed",col="black")
+plot(Xe$xyt,scatter=TRUE)
 
 # Balls
 Xb <- stdcpp(lambp=20, a=0.05, b=0.05, c=0.05, mu=100)
@@ -56,9 +55,7 @@ plot(Xb$xyt)
 
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
-plot(Xb$xyt,scatter=TRUE,theta=45,phi=30,
-main="Spatio-temporal point pattern",xlab="\n x",ylab="\n y",
-zlab="\n t",ticktype="detailed",col="black")
+plot(Xb$xyt,scatter=TRUE)
 
 # Northcumbria
 data(northcumbria)

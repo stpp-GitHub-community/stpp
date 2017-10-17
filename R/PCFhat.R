@@ -106,6 +106,7 @@ PCFhat <-function(xyt, s.region, t.region, dist, times, lambda, ks = "box", hs, 
     kt = 3
   else if (kt == "biweight") 
     kt = 4
+  
   if (missing(lambda)){
     misl <- 1
     lambda <- rep(npt/area, npt)
@@ -113,7 +114,9 @@ PCFhat <-function(xyt, s.region, t.region, dist, times, lambda, ks = "box", hs, 
   else misl <- 0
   if (length(lambda) == 1) 
     lambda <- rep(lambda, npt)
+  
   storage.mode(pcfhat) <- "double"
+  
   wbi = array(0, dim = c(npt, ndist, ntimes))
   wbimod = array(0, dim = c(npt, ndist, ntimes))
   wt = array(0, dim = c(npt, npt))

@@ -86,6 +86,7 @@ STIKhat <- function(xyt, s.region, t.region, dist, times, lambda, correction = "
   if (length(lambda) == 1) lambda <- rep(lambda, npt)
 
   if (infectious==TRUE){infd <- 1} else infd <- 0
+  
   storage.mode(hkhat) <- "double"
 
   wbi = array(0, dim = c(npt, ndist, ntimes))
