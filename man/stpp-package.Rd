@@ -81,5 +81,3 @@ Gneiting T. (2002). Nonseparable, stationary covariance functions for space-time
 
 Gonzalez, J. A., Rodriguez-Cortes, F. J., Cronie, O. and Mateu, J. (2016). Spatio-temporal point process statistics: a review. Spatial Statiscts, 18, 505--544.
 }
-
- 
