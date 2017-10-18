@@ -1,4 +1,4 @@
-useDynLib(stpp,.registration=TRUE)
+useDynLib(stpp, .registration=TRUE, .fixes = "C_")
 exportPattern("^[^\\.]")
 
 import(splancs)
