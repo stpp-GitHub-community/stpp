@@ -5,7 +5,7 @@
 
 \title{Space-Time Point Pattern simulation, visualisation and analysis}
 
-\description{ This package provides models of spatio-temporal point processes in a region \eqn{S\times T}{S x T} and statistical tools for analysing second-order properties of such processes. It also includes static and dynamic (2D and 3D) plots. \code{stpp} is the first dedicated unified computational environment in the area of spatio-temporal point processes.
+\description{ This package provides models of spatio-temporal point processes in a region \eqn{S\times T}{S x T} and statistical tools for analysing global and local second-order properties of such processes. It also includes static and dynamic (2D and 3D) plots. \code{stpp} is the first dedicated unified computational environment in the area of spatio-temporal point processes.
 
 The \code{stpp} package depends upon some other packages:
 
@@ -51,7 +51,8 @@ Following is a summary of the main functions and the dataset in the \code{stpp} 
 \itemize{
 \item \code{\link{PCFhat}}: space-time inhomogeneous pair correlation function,
 \item \code{\link{STIKhat}}: space-time inhomogeneous K-function,
-\item \code{\link{ASTIKhat}}: Anisotropic space-time inhomogeneous K-function.
+\item \code{\link{ASTIKhat}}: Anisotropic space-time inhomogeneous K-function,
+\item \code{\link{LISTAhat}}: space-time inhomogeneous pair correlation LISTA funcrions.
 }
 
 \emph{Dataset}
