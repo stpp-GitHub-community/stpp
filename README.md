@@ -1,18 +1,18 @@
 # stpp: Space-Time Point Pattern Simulation, Visualisation and Analysis
 
-Many of the models encountered in applications of point process methods to the study of spatio-temporal phenomena are covered in 'stpp'. This package provides statistical tools for analyzing the second-order properties of spatio-temporal point processes, including estimators of the space-time inhomogeneous K-function and pair correlation function. It also includes tools to get static and dynamic display of spatio-temporal point patterns.
+Many of the models encountered in applications of point process methods to the study of spatio-temporal phenomena are covered in 'stpp'. This package provides statistical tools for analyzing the global and local second-order properties of spatio-temporal point processes, including estimators of the space-time inhomogeneous K-function and pair correlation function. It also includes tools to get static and dynamic display of spatio-temporal point patterns.
 
 ## This is the development version
 
 **Installation guide**
 
-The easiest way to install the development version of `stpp` from GitHub is using the `remotes` package which can be installed run the next command:
+The easiest way to install the development version of `stpp` from GitHub is using the `devtools` package which can be installed run the next command:
 ```
-install.packages('remotes')
+install.packages('devtools')
 ```
 and thereafter run the commands:
 ```
-require(remotes)
+require(devtools)
 install_github('stpp-GitHub-community/stpp')
 ```
 
