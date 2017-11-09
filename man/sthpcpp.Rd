@@ -58,15 +58,15 @@ plot(X$xyt,scatter=TRUE)
 ## Spatio-temporal hot-spots cluster point process model
 data(northcumbria)
 Northcumbria <- northcumbria/1000
-Xo <- sthpcpp(lambp=0.0035, r=5, mu=200, s.region=Northcumbria, 
-                   t.region=c(28,198))
+Xo <- sthpcpp(lambp=0.0035, r=5, mu=200,
+s.region=Northcumbria, t.region=c(28,198))
 plot(Xo$xyt,s.region=Northcumbria)
 
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
 plot(Xo$xyt,scatter=TRUE,theta=45,phi=30,
-main="Spatio-temporal point pattern",xlab="\n x",ylab="\n y",
-zlab="\n t",ticktype="detailed",col="black")
+main="Spatio-temporal point pattern",
+ticktype="detailed",col="black")
 
 ## End(Not run)
 }

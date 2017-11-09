@@ -66,8 +66,8 @@ plot(X$xyt,s.region=Northcumbria)
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
 plot(X$xyt,scatter=TRUE,theta=45,phi=30,
-main="Spatio-temporal point pattern",xlab="\n x",ylab="\n y",
-zlab="\n t",ticktype="detailed",col="black")
+main="Spatio-temporal point pattern",
+ticktype="detailed",col="black")
 
 ## End(Not run)
 }

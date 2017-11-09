@@ -6,7 +6,7 @@ if (inherits(x,"stpp")==TRUE)
 	{ 
   
   if (scatter==TRUE)
-    scatter3D(x[,1],x[,2],x[,3],...)
+    scatter3D(x[,1],x[,2],x[,3],zlab="\n t",...)
   else{
 
 	if (mark==FALSE)
