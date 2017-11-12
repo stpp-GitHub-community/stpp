@@ -5,8 +5,10 @@ plot.stpp <- function(x, s.region=NULL, t.region=NULL, scatter=FALSE, mark=FALSE
 if (inherits(x,"stpp")==TRUE) 
 	{ 
   
-  if (scatter==TRUE)
-    scatter3D(x[,1],x[,2],x[,3],zlab="\n t",...)
+  if (scatter==TRUE){
+    par(mfrow=c(1,1),pty="s")
+    scatter3D(x[,1],x[,2],x[,3],zlab="\n t",main="xyt-locations",...)
+  }
   else{
 
 	if (mark==FALSE)
@@ -24,17 +26,20 @@ if (inherits(x,"stpp")==TRUE)
   
 	if (mark==TRUE)
 	 {
+	  snorm=apply(x[,1:2],MARGIN=1,FUN=norm,type="2")
+	  t=x[,3]
 	  l=dim(x)[1]
 	  CEX=seq(mark.cexmin,mark.cexmax,length=l)
         if (mark.col==0)
 	     {
-          par(mfrow=c(1,1),pty="s")
+          par(mfrow=c(1,2),pty="s")
 		  if (is.null(s.region))	
-	  	   plot(x[,1:2],cex=CEX,...)
+	  	   plot(x[,1:2],cex=CEX,main="Time mark",...)
  		  else
 			{
 			  polymap(s.region,xlab="x",ylab="y")
-			  points(x[,1:2],cex=CEX,...)	 
+			  points(x[,1:2],cex=CEX,...)
+			  title("Time mark")
 			}
           }
         else 
@@ -47,15 +52,17 @@ if (inherits(x,"stpp")==TRUE)
         	   COL=rgb(0, l:0, 0, maxColorValue = l)
 	       if (mark.col=="blue" | mark.col==4)	
 	           COL=rgb(0, 0, l:0, maxColorValue = l)
-	       par(mfrow=c(1,1),pty="s")
+	       par(mfrow=c(1,2),pty="s")
     	  if (is.null(s.region))	
-	     	plot(x[,1:2],col=COL,cex=CEX,...)
+	     	plot(x[,1:2],col=COL,cex=CEX,main="Time mark",...)
  	      else
 		  {
 		   polymap(s.region,xlab="x",ylab="y")
-		      points(x[,1:2],col=COL,cex=CEX,...)	 
+		   points(x[,1:2],col=COL,cex=CEX,...)	 
+		  title("Time mark")
 		  }
          }
+	  plot(t,snorm,type="h",ylab="||(x,y)||",main="Space mark",...)
 	  }	
    }
   }
