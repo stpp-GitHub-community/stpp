@@ -14,8 +14,8 @@ is.3dpoints(x)
  }
 
 \value{
-is.3dpoints returns TRUE if x is a spatio-temporal points object, FALSE
-otherwise. }
+is.3dpoints returns TRUE if \code{x} is a spatio-temporal points object, FALSE
+otherwise.}
 
 \author{Edith Gabriel <edith.gabriel@univ-avignon.fr>, Peter Diggle, Barry
 Rowlingson.}

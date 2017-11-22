@@ -1,25 +1,26 @@
 \name{stdcpp}
 \alias{stdcpp}
 
-\title{Spatio-temporal double cluster point process model}
+\title{Generate double-cluster point pattern}
 
-\description{Generate a random spatio-temporal point pattern, a simulated realisation of the cluster process.}
+\description{Generate a realisation of the double-cluster process in a region \eqn{S\times T}{S x T}.}
 
 \usage{stdcpp(lambp, a, b, c, mu, s.region, t.region)}
 
 \arguments{
-  \item{lambp}{Intensity of the Poisson process of cluster centres. A single positive number or function.}
-  \item{a}{Length of the semi-axes x of ellipsoid.}
-  \item{b}{Length of the semi-axes y of ellipsoid.}
-  \item{c}{Length of the semi-axes z of ellipsoid.}
-  \item{mu}{Mean number of points per cluster (a single positive number).}
-  \item{s.region}{A two-column matrix specifying a polygonal region containing all data locations. If \code{s.region} is missing, the Ripley-Rasson estimate convex spatial domain is considered.}
-  \item{t.region}{A vector containing the minimum and maximum values of the time interval. If \code{t.region} is missing, the range of \code{xyt[,3]} is considered.}
+ \item{s.region}{Two-column matrix specifying polygonal region containing
+  all data locations.If \code{s.region} is missing, the unit square is considered.}
+  \item{t.region}{Vector containing the minimum and maximum values of the time interval. If \code{t.region} is missing, the interval \eqn{[0,1]}{[0,1]} is considered.}
+  \item{lambp}{Intensity of the parent process. Can be either a numeric value, a function, or a 3d-array (see \code{\link{rpp}}).}
+  \item{a}{Length of the semi-axes \eqn{x}{x} of ellipsoid.}
+  \item{b}{Length of the semi-axes \eqn{y}{y} of ellipsoid.}
+  \item{c}{Length of the semi-axes \eqn{y}{y} of ellipsoid.}
+  \item{mu}{Average number of daughter per parent. (a single positive number).}
 }
 
-\details{We consider the straightforward extension of the classical Matern cluster process on the \eqn{R^3} case (with ellipsoid or balls) by considering the \eqn{z}-coordiantes as times.
+\details{We consider the straightforward extension of the classical Matern cluster process on the \eqn{R^3} case (with ellipsoid or balls) by considering the \eqn{z}{z}-coordiantes as times.
 
-Consider a Poisson point process in the plane with intensity \eqn{\lambda_{p}} as cluster centres for all times 'parent', as well as a ellipsoid (or ball) where the semi-axes are of lengths \eqn{a}, \eqn{b} and \eqn{c}, around of each Poisson point under a random general rotation. The scatter uniformly in all ellipsoid (or ball)  of all points which are of the form \eqn{(x,y,z)}, the number of points in each cluster being random with a Poisson (\eqn{\mu}) distribution. The resulting point pattern is a spatio-temporal cluster point process with \eqn{t=z}. This point process has intensity \eqn{\lambda_{p} * \mu}.}
+Consider a Poisson point process in the plane with intensity \eqn{\lambda_p}{\lambda_p} as cluster centres for all times 'parent', as well as a ellipsoid (or ball) where the semi-axes are of lengths \eqn{a}{a}, \eqn{b}{b} and \eqn{c}{c}, around of each Poisson point under a random general rotation. The scatter uniformly in all ellipsoid (or ball)  of all points which are of the form \eqn{(x,y,z)}{(x,y,z)}, the number of points in each cluster being random with a Poisson (\eqn{\mu}{\mu}) distribution. The resulting point pattern is a spatio-temporal cluster point process with \eqn{t=z}{t=z}. This point process has intensity \eqn{\lambda_{p} \times \mu}{\lambda_{p} x \mu}.}
 
 \value{The simulated spatio-temporal point pattern.}
 
@@ -35,7 +36,7 @@ Illian, J B., Penttinen, A., Stoyan, H. and Stoyan, D. (2008). Statistical Analy
 Stoyan, D., Rodriguez-Cortes, F. J., Mateu, J., and Gille, W. (2017). Mark variograms for spatio-temporal point processes. Spatial Statistics. 20, 125-147.
 }
 
-\author{Francisco J. Rodriguez Cortes <cortesf@uji.es>, Edith Gabriel}
+\author{Francisco J. Rodriguez Cortes <cortesf@uji.es>}
 
 \examples{\dontrun{
 # Ellipsoid
@@ -44,7 +45,7 @@ plot(Xe$xyt)
 
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
-plot(Xe$xyt,style="scatter")
+plot(Xe$xyt,type="scatter")
 
 # Balls
 Xb <- stdcpp(lambp=20,a=0.07,b=0.07,c=0.07,mu=100)
@@ -52,16 +53,17 @@ plot(Xb$xyt)
 
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
-plot(Xb$xyt,style="scatter")
+plot(Xb$xyt,type="mark",style="elegant")
 
 # Northcumbria
 data(northcumbria)
 Northcumbria <- northcumbria/1000
-X <- stdcpp(lambp=0.00004,a=10,b=10,c=10,mu=120,s.region=Northcumbria,t.region=c(0,200))
+X <- stdcpp(lambp=0.00004,a=10,b=10,c=10,mu=120,
+s.region=Northcumbria,t.region=c(0,200))
 plot(X$xyt,s.region=Northcumbria)
 
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
-plot(X$xyt,style="scatter",theta=45,phi=30,
-ticktype="detailed",col="black")
+plot(X$xyt,type="scatter",theta=45,phi=30,
+ticktype="detailed",col="black",style="elegant")
 }}
