@@ -294,9 +294,12 @@
       df=NULL
       for(nl in 1:nt)
       {
-        lambdal=as.im(list(x=s.grid$x,y=s.grid$y,z=Lambda[,,nl]))
+        LL = Lambda
+        LL[is.na(LL)] = -999
+        lambdal=as.im(list(x=s.grid$x,y=s.grid$y,z=LL[,,nl]))
         df <- rbind(df,as.data.frame(lambdal))
       }
+      df$value[df$value==-999]=0
       
       samp=sample.int(length(XX),npoints,replace=TRUE,prob=df$value)
       xx <- XX[samp] + runif(npoints, -s.grid$xinc/2, s.grid$xinc/2)

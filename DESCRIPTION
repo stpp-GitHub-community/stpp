@@ -3,7 +3,7 @@ Version: 2.0-1
 Title: Space-Time Point Pattern Simulation, Visualisation and Analysis
 Date: 2017-07-27
 Authors@R: c(person("Edith", "Gabriel", role=c("aut","cre"),email="edith.gabriel@univ-avignon.fr"),person("Peter J","Diggle",role="aut"),person("Barry","Rowlingson",role="aut"),person("Francisco J","Rodriguez-Cortes",role="aut"))
-Depends: R (>= 3.4.0), splancs, KernSmooth, spatstat, rpanel, rgl, plot3D
+Depends: R (>= 3.4.2), splancs, KernSmooth, spatstat, rpanel, rgl, plot3D, ggplot2, gridExtra
 Description: Many of the models encountered in applications of point process methods to the study of spatio-temporal phenomena are covered in 'stpp'. This package provides statistical tools for analyzing the global and local second-order properties of spatio-temporal point processes, including estimators of the space-time inhomogeneous K-function and pair correlation function. It also includes tools to get static and dynamic display of spatio-temporal point patterns. See Gabriel et al. (2013) <doi:10.18637/jss.v053.i02>.
 License: GPL-3
 LazyLoad: yes

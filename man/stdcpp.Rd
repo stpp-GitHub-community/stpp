@@ -37,37 +37,31 @@ Stoyan, D., Rodriguez-Cortes, F. J., Mateu, J., and Gille, W. (2017). Mark vario
 
 \author{Francisco J. Rodriguez Cortes <cortesf@uji.es>, Edith Gabriel}
 
-\examples{
-## Not run:
-#################
-
+\examples{\dontrun{
 # Ellipsoid
-Xe <- stdcpp(lambp=20, a=0.12, b=0.09, c=0.07, mu=100)
+Xe <- stdcpp(lambp=20,a=0.5,b=0.09,c=0.07,mu=100)
 plot(Xe$xyt)
 
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
-plot(Xe$xyt,scatter=TRUE)
+plot(Xe$xyt,style="scatter")
 
 # Balls
-Xb <- stdcpp(lambp=20, a=0.05, b=0.05, c=0.05, mu=100)
+Xb <- stdcpp(lambp=20,a=0.07,b=0.07,c=0.07,mu=100)
 plot(Xb$xyt)
 
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
-plot(Xb$xyt,scatter=TRUE)
+plot(Xb$xyt,style="scatter")
 
 # Northcumbria
 data(northcumbria)
 Northcumbria <- northcumbria/1000
-X <- stdcpp(lambp=0.00004, a=10,b=10,c=10, mu=120, s.region=Northcumbria, t.region=c(0,200))
+X <- stdcpp(lambp=0.00004,a=10,b=10,c=10,mu=120,s.region=Northcumbria,t.region=c(0,200))
 plot(X$xyt,s.region=Northcumbria)
 
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
-plot(X$xyt,scatter=TRUE,theta=45,phi=30,
-main="Spatio-temporal point pattern",
+plot(X$xyt,style="scatter",theta=45,phi=30,
 ticktype="detailed",col="black")
-
-## End(Not run)
-}
+}}

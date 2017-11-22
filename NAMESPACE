@@ -1,4 +1,4 @@
-useDynLib(stpp, .registration=TRUE, .fixes = "C_")
+useDynLib(stpp, .registration=TRUE)
 exportPattern("^[^\\.]")
 
 import(splancs)
@@ -7,9 +7,11 @@ import(KernSmooth)
 import(rgl)
 import(rpanel)
 import(plot3D)
+import(ggplot2)
 
 importFrom("grDevices", "chull", "colorRampPalette", "dev.list","dev.new", "dev.off", "gray", "grey", "heat.colors", "rgb")
 importFrom("graphics", "axTicks", "axis", "box", "contour", "image","par", "persp", "plot", "points", "title")
 importFrom("stats", "dnorm", "fft", "median", "rexp", "rnorm", "rpois","runif", "time") 
+importFrom("gridExtra","grid.arrange")
 
 S3method(plot,stpp)

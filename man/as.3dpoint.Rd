@@ -10,7 +10,7 @@ as.3dpoints(...)
 }
 
 \arguments{
-  \item{...}{any object(s), such as x, y and t vectors of the same length, 
+  \item{...}{Any object(s), such as x, y and t vectors of the same length, 
   or a list or data frame containing x, y and t vectors. Valid options for 
   ... are: a points object: returns it unaltered; a list with x, y and t 
   elements of the same length: returns a points object with the x, y and t 

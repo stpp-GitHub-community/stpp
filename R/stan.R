@@ -83,6 +83,8 @@
 stan <- function(xyt,tlim=range(xyt[,3],na.rm=TRUE),twid=diff(tlim)/20,persist=FALSE,states,bgpoly,bgframe=TRUE,bgimage,bgcol=gray(seq(0,1,len=12)),axes=TRUE){
 #  requireNamespace(rgl)
 #  requireNamespace(rpanel)
+  
+  verifyclass(xyt,"stpp")  
 
 X=(xyt[,1]-min(xyt[,1]))/(diff(range(xyt[,1])))
 Y=(xyt[,2]-min(xyt[,2]))/(diff(range(xyt[,2])))

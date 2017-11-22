@@ -16,7 +16,7 @@ correction="isotropic", infectious=FALSE) }
  \item{correction}{A character vector specifying the edge correction(s) to be applied among \code{"isotropic"}, \code{"border"}, \code{"modified.border"}, \code{"translate"} and \code{"none"} (see Details). The default is \code{"isotropic"}.}
  \item{infectious}{logical value. If \code{TRUE}, only future events are considered and the isotropic edge correction method is used. See Details.}}
 
-\details{Gabriel (2014) proposes the following unbiased estimator for the STIK-function, based on data giving the locations of events \eqn{x_i: i=1,...n}{x_i: i = 1,...n} on a spatio-temporal region \eqn{S\times T}{SxT}, where \eqn{S}{S} is an arbitrary polygon and \eqn{T}{T} is a time interval:
+\details{Gabriel (2014) proposes the following unbiased estimator for the STIK-function, based on data giving the locations of events \eqn{x_i: i=1,\ldots,n}{x_i: i = 1,...,n} on a spatio-temporal region \eqn{S\times T}{SxT}, where \eqn{S}{S} is an arbitrary polygon and \eqn{T}{T} is a time interval:
 \deqn{\widehat{K}(u,v)=\sum_{i=1}^{n}\sum_{j\neq i}\frac{1}{w_{ij}}\frac{1}{\lambda(x_i)\lambda(x_j)}\mathbf{1}_{\lbrace \|s_i - s_j\| \leq u \ ; \ |t_i - t_j| \leq v \rbrace},}{K(u,v) = sum_{i = 1,...,n} sum_{j != i} 1/w_ij 1/(lambda(x_i) lambda(x_j)) 1{u_ij <= u ; t_j - t_i <= v},}
 where \eqn{\lambda(x_i)}{lambda(x_i)} is the intensity at \eqn{x_i = (s_i,t_i)}{x_i = (s_i, t_i)} and \eqn{w_{ij}}{w_ij} is an edge correction factor to deal with spatial-temporal edge effects. The edge correction methods implemented are:
 

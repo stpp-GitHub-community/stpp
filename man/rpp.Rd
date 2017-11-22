@@ -72,13 +72,15 @@ polymap(northcumbria)
 animation(hpp2$xyt, s.region=hpp2$s.region, t.region=hpp2$t.region, 
 runtime=10, add=TRUE)
 }
+
+\dontrun{
 # Inhomogeneous Poisson process
 # -----------------------------
 
 # intensity defined by a function
 lbda1 = function(x,y,t,a){a*exp(-4*y) * exp(-2*t)}
 ipp1 = rpp(lambda=lbda1, npoints=400, a=3200/((1-exp(-4))*(1-exp(-2))))
-\dontrun{stan(ipp1$xyt)}
+stan(ipp1$xyt)
 
 # intensity defined by a matrix
 data(fmd)
@@ -89,9 +91,9 @@ Ls = kernel2d(as.points(fmd[,1:2]), northcumbria, h, nx=100, ny=100)
 Lt = dim(fmd)[1]*density(fmd[,3], n=200)$y
 Lst=array(0,dim=c(100,100,200))
 for(k in 1:200) Lst[,,k] <- Ls$z*Lt[k]/dim(fmd)[1]
-#ipp2 = rpp(lambda=Lst, s.region=northcumbria, t.region=c(1,200), 
-#discrete.time=TRUE)
-\dontrun{           
+ipp2 = rpp(lambda=Lst, s.region=northcumbria, t.region=c(1,200), 
+discrete.time=TRUE)
+           
 par(mfrow=c(1,1))
 image(Ls$x, Ls$y, Ls$z, col=grey((1000:1)/1000)); polygon(northcumbria)
 animation(ipp2$xyt, add=TRUE, cex=0.5, runtime=15)

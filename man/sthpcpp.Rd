@@ -44,16 +44,14 @@ Stoyan, D., Rodriguez-Cortes, F. J., Mateu, J., and Gille, W. (2017). Mark vario
 }
 \author{Francisco J. Rodriguez Cortes <cortesf@uji.es>, Edith Gabriel}
 
-\examples{
-## Not run:
-#################
+\examples{\dontrun{
 
 X <- sthpcpp(lambp=20, r=0.05, mu=100)
 plot(X$xyt)
 
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
-plot(X$xyt,scatter=TRUE)
+plot(X$xyt,style="scatter")
 
 ## Spatio-temporal hot-spots cluster point process model
 data(northcumbria)
@@ -64,9 +62,6 @@ plot(Xo$xyt,s.region=Northcumbria)
 
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
-plot(Xo$xyt,scatter=TRUE,theta=45,phi=30,
-main="Spatio-temporal point pattern",
+plot(Xo$xyt,style="scatter",theta=45,phi=30,
 ticktype="detailed",col="black")
-
-## End(Not run)
-}
+}}
