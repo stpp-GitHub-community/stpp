@@ -18,8 +18,7 @@ ASTIKhat(xyt, s.region, t.region, lambda, dist, times, ang,
 
 \item{lambda}{Vector of values of the space-time intensity function evaluated at the points \eqn{(x,y,t)}{(x,y,t)} in \eqn{S\times T}{S x T}. If \code{lambda} is missing, the estimate of the anisotropic space-time \eqn{K}{K}-function is computed as for the homogeneous case, i.e. considering \eqn{n/|S\times T|}{n/|S x T|} as an estimate of the space-time intensity.}
 
-
-\item{ang}{Angle in radians at which \eqn{\widehat{K}_{\phi}(r,t)}{K_\phi(r,t)} is computed.}
+\item{ang}{Angle in radians at which \eqn{\widehat{K}_{\phi}(r,t)}{K_\phi(r,t)} is computed. The argument \code{ang=2*pi} by default.}
 
 \item{correction}{A character vector specifying the edge correction(s) to be applied among "border", "modified.border", "translate" and "none". The default is "border".}
 }

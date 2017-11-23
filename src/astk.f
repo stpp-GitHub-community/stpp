@@ -11,7 +11,7 @@ C     of the anisotropic spatio-temporal inhomogeneous K-function
       double precision astkf,two,vij,wij,hij,tij,angij,ag,xi,yi,ti
       double precision x,y,txy,xc,yc,wbi,wbimod,wt,lambda
       dimension wbi(n,ns,nt),wbimod(n,ns,nt),wt(n,n),correc(4),lambda(n)
-      dimension x(n),y(n),txy(n),s(ns),t(nt),astkf(ns,nt),xc(n),yc(n)
+      dimension x(n),y(n),txy(n),s(ns),t(nt),astkf(ns,nt,4),xc(n),yc(n)
 
       two=2d0      
       pi=3.14159265d0
@@ -48,25 +48,25 @@ c     none
       if (correc(1).eq.1) then
          vij=1d0
          wij=vij/(lambda(i)*lambda(j))
-         astkf(iu,iv)=astkf(iu,iv)+wij
+         astkf(iu,iv,1)=astkf(iu,iv,1)+wij
       end if
 c     border
       if (correc(2).eq.1) then
          vij=wbi(i,iu,iv)
          wij=vij/(lambda(i)*lambda(j))
-         astkf(iu,iv)=astkf(iu,iv)+wij
+         astkf(iu,iv,2)=astkf(iu,iv,2)+wij
       end if
 c     modified border
       if (correc(3).eq.1) then
          vij=wbimod(i,iu,iv)
          wij=vij/(lambda(i)*lambda(j))
-         astkf(iu,iv)=astkf(iu,iv)+wij
+         astkf(iu,iv,3)=astkf(iu,iv,3)+wij
       end if
 c     translate
       if (correc(4).eq.1) then
          vij=wt(i,j)
          wij=vij/(lambda(i)*lambda(j))
-         astkf(iu,iv)=astkf(iu,iv)+wij
+         astkf(iu,iv,4)=astkf(iu,iv,4)+wij
       end if
       end if          
       end if

@@ -20,17 +20,17 @@ stdcpp <- function(lambp, a, b, c, mu, s.region, t.region){
   if (missing(t.region)) t.region <- c(0,1)
   
   stPoip <- rpp(lambda=lambp,s.region,t.region)$xyt
-  stmc <- do.call(rbind, sapply(seq(1,length(stPoip[,1])), function(i) PoiSph(a,b,c,mu=mu,centre=stPoip[i,])))
+  stmc <- do.call(rbind, sapply(seq(1,length(stPoip[,1])), function(i) .PoiSph(a,b,c,mu=mu,centre=stPoip[i,])))
   
   ok <- inside.owin(stmc[,1],stmc[,2],w=bsw)
   insw <- data.frame(x=stmc[,1][ok],y=stmc[,2][ok],t=stmc[,3][ok])
-  stc3 <- intim(insw,t.region)
+  stc3 <- .intim(insw,t.region)
   stc3 <- as.3dpoints(stc3)
   
   invisible(return(list(xyt=stc3,s.region=s.region,t.region=t.region)))
 }
 
-PoiSph <- function(a,b,c,mu,centre){
+.PoiSph <- function(a,b,c,mu,centre){
   n <- rpois(1,mu)
   
   if (a==b & b==c){

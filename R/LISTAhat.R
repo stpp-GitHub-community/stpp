@@ -62,7 +62,7 @@ if (times[1] == 0)
 
 ok <- inside.owin(xyt[,1],xyt[,2],w=bdry)
 xyt.ins <- data.frame(x=xyt[,1][ok],y=xyt[,2][ok],t=xyt[,3][ok])
-xyt.in <- intim(xyt.ins,t.region)
+xyt.in <- .intim(xyt.ins,t.region)
 
 pts <- xyt.in[,1:2]
 xytimes <- xyt.in[,3]
@@ -150,7 +150,7 @@ if (any(correction == "translate")) {
 
 options(warn = 0)
 
-all.lista <- sapply(seq(1,npt), function(i) i.LISTAhat(i,id,ptsx,ptsy,ptst,npt,polyx,polyy,np,dist,ndist,times,ntimes,bsupt,binft,lambda,ks,kt,hs,ht,wbi,wbimod,wt,correc2,correc,area),simplify="array")
+all.lista <- sapply(seq(1,npt), function(i) .i.LISTAhat(i,id,ptsx,ptsy,ptst,npt,polyx,polyy,np,dist,ndist,times,ntimes,bsupt,binft,lambda,ks,kt,hs,ht,wbi,wbimod,wt,correc2,correc,area),simplify="array")
 
 correction = correc[id]
 listatheo = array(1+(1/(npt-1)), dim = c(ndist, ntimes))
@@ -158,7 +158,7 @@ listatheo = array(1+(1/(npt-1)), dim = c(ndist, ntimes))
 invisible(return(list(list.LISTA = all.lista, listatheo = listatheo, dist = dist, times = times, kernel = kernel, correction = correction)))
 }
 
-i.LISTAhat <- function(i,id,ptsx,ptsy,ptst,npt,polyx,polyy,np,dist,ndist,times,ntimes,bsupt,binft,lambda,ks,kt,hs,ht,wbi,wbimod,wt,correc2,correc,area){
+.i.LISTAhat <- function(i,id,ptsx,ptsy,ptst,npt,polyx,polyy,np,dist,ndist,times,ntimes,bsupt,binft,lambda,ks,kt,hs,ht,wbi,wbimod,wt,correc2,correc,area){
   
   xi <- ptsx[i]
   yi <- ptsy[i]

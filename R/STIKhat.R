@@ -62,7 +62,7 @@ STIKhat <- function(xyt, s.region, t.region, dist, times, lambda, correction = "
 
    ok <- inside.owin(xyt[,1],xyt[,2],w=bdry)
    xyt.ins <- data.frame(x=xyt[,1][ok],y=xyt[,2][ok],t=xyt[,3][ok])
-   xyt.in <- intim(xyt.ins,t.region)
+   xyt.in <- .intim(xyt.ins,t.region)
    
   pts <- xyt.in[,1:2]
   xytimes <- xyt.in[,3]
@@ -195,7 +195,7 @@ STIKhat <- function(xyt, s.region, t.region, dist, times, lambda, correction = "
   invisible(return(b))
 }
 
-intim <- function(xyt,t.region){
+.intim <- function(xyt,t.region){
   int <- NULL
   for(i in 1:length(xyt[,1])){
     if (xyt[i,3] > t.region[1] & xyt[i,3] < t.region[2]){

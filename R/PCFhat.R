@@ -60,7 +60,7 @@ PCFhat <-function(xyt, s.region, t.region, dist, times, lambda, ks = "box", hs, 
   
   ok <- inside.owin(xyt[,1],xyt[,2],w=bdry)
   xyt.ins <- data.frame(x=xyt[,1][ok],y=xyt[,2][ok],t=xyt[,3][ok])
-  xyt.in <- intim(xyt.ins,t.region)
+  xyt.in <- .intim(xyt.ins,t.region)
   
   pts <- xyt.in[,1:2]
   xytimes <- xyt.in[,3]

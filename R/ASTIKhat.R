@@ -1,4 +1,4 @@
-ASTIKhat <- function(xyt,s.region,t.region,lambda,dist,times,ang,correction="border") {
+ASTIKhat <- function(xyt,s.region,t.region,lambda,dist,times,ang=2*pi,correction="border"){
 
   verifyclass(xyt,"stpp")
   
@@ -60,7 +60,7 @@ ASTIKhat <- function(xyt,s.region,t.region,lambda,dist,times,ang,correction="bor
   
   ok <- inside.owin(xyt[,1],xyt[,2],w=bdry)
   xyt.ins <- data.frame(x=xyt[,1][ok],y=xyt[,2][ok],t=xyt[,3][ok])
-  xyt.in <- intim(xyt.ins,t.region)
+  xyt.in <- .intim(xyt.ins,t.region)
 
   pts <- xyt.in[,1:2]
   xytimes <- xyt.in[,3]
@@ -71,7 +71,7 @@ ASTIKhat <- function(xyt,s.region,t.region,lambda,dist,times,ang,correction="bor
   ndist <- length(dist)
   ntimes <- length(times)
   area <- area(bdry) * (bsupt - binft)
-  astkf <- array(0,dim=c(ndist, ntimes))
+  astkf <- array(0,dim=c(ndist, ntimes, 4))
   
   if(missing(lambda)){
     misl <- 1
@@ -125,7 +125,18 @@ ASTIKhat <- function(xyt,s.region,t.region,lambda,dist,times,ang,correction="bor
                    as.double(wbimod), as.double(wt),
                    as.integer(correc2), (astkf))
   
-  astkf <- astk[[15]]/area
+  astkf <- astk[[15]]
   
-invisible(return(list(AKhat=astkf,dist=dist,times=times,correction=correction)))
+  astkf[,,c(1,2,4)]=astkf[,,c(1,2,4)]/area
+  
+  if(length(id)==1) AKhat=as.array(astkf[,,id])
+  else{
+    AKhat=list()
+    for(i in 1:length(id)) AKhat[[i]]=astkf[,,id[i]]	
+    names(AKhat)=correc[id]
+  }
+  correction=correc[id]
+  
+  
+invisible(return(list(AKhat=AKhat,dist=dist,times=times,correction=correction)))
 }
