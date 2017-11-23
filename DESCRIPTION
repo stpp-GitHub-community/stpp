@@ -8,3 +8,5 @@ Description: Many of the models encountered in applications of point process met
 License: GPL-3
 LazyLoad: yes
 RoxygenNote: 6.0.1
+Suggests: packagedocs
+VignetteBuilder: packagedocs

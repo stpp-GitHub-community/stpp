@@ -1,0 +1,16 @@
+---
+title: "stpp Documentation"
+subtitle: "Space-Time Point Pattern Simulation, Visualisation and Analysis"
+author: "Edith Gabriel"
+copyright: "Edith Gabriel"
+output:
+  packagedocs::package_docs:
+    toc: true
+    toc_collapse: false
+redirect: https://github.com/stpp-GitHub-community
+vignette: |
+  %\VignetteIndexEntry{stpp Documentation}
+  %\VignetteEngine{packagedocs::redirect}
+navpills: |
+  <li class="active"><a href='inst/doc/docs.html'>Docs</a></li>
+---
