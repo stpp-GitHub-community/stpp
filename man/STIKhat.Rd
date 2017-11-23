@@ -7,14 +7,14 @@
 correction="isotropic", infectious=FALSE) }
 
 \arguments{
-  \item{xyt}{coordinates and times \eqn{(x,y,t)}{(x,y,t)} of the point pattern.}
-  \item{s.region}{two-column matrix specifying polygonal region containing all data locations. If \code{s.region} is missing, the bounding box of \code{xyt[,1:2]} is considered.}
-  \item{t.region}{vector containing the minimum and maximum values of the time interval. If \code{t.region} is missing, the range of \code{xyt[,3]} is considered.}
-  \item{dist}{vector of distances \eqn{u}{u} at which \eqn{K(u,v)}{K(u,v)} is computed. If missing, the maximum of \code{dist} is given by \eqn{\min(S_x,S_y)/4}{min(S_x, S_y)/4}, where \eqn{S_x}{S_x} and \eqn{S_y}{S_y} represent the maximum width and height of the bounding box of \code{s.region}.}
-  \item{times}{vector of times \eqn{v}{v} at which \eqn{K(u,v)}{K(u,v)} is computed. If missing, the maximum of \code{times} is given by \eqn{(T_{\max} - T_{\min})/4}{(T_max - T_min)/4}, where \eqn{T_{\min}}{T_min} and \eqn{T_{\max}}{T_max} are the minimum and maximum of the time interval \eqn{T}{T}.} 
-  \item{lambda}{vector of values of the space-time intensity function evaluated at the points \eqn{(x,y,t)}{(x,y,t)} in \eqn{S\times T}{S x T}. If \code{lambda} is missing, the estimate of the space-time K-function is computed as for the homogeneous case (Diggle et al., 1995), i.e. considering \eqn{n/|S \times T|}{n/|S x T|} as an estimate of the space-time intensity.}
+  \item{xyt}{Coordinates and times \eqn{(x,y,t)}{(x,y,t)} of the point pattern.}
+  \item{s.region}{Two-column matrix specifying polygonal region containing all data locations. If \code{s.region} is missing, the bounding box of \code{xyt[,1:2]} is considered.}
+  \item{t.region}{Vector containing the minimum and maximum values of the time interval. If \code{t.region} is missing, the range of \code{xyt[,3]} is considered.}
+  \item{dist}{Vector of distances \eqn{u}{u} at which \eqn{K(u,v)}{K(u,v)} is computed. If missing, the maximum of \code{dist} is given by \eqn{\min(S_x,S_y)/4}{min(S_x, S_y)/4}, where \eqn{S_x}{S_x} and \eqn{S_y}{S_y} represent the maximum width and height of the bounding box of \code{s.region}.}
+  \item{times}{Vector of times \eqn{v}{v} at which \eqn{K(u,v)}{K(u,v)} is computed. If missing, the maximum of \code{times} is given by \eqn{(T_{\max} - T_{\min})/4}{(T_max - T_min)/4}, where \eqn{T_{\min}}{T_min} and \eqn{T_{\max}}{T_max} are the minimum and maximum of the time interval \eqn{T}{T}.} 
+  \item{lambda}{Vector of values of the space-time intensity function evaluated at the points \eqn{(x,y,t)}{(x,y,t)} in \eqn{S\times T}{S x T}. If \code{lambda} is missing, the estimate of the space-time K-function is computed as for the homogeneous case (Diggle et al., 1995), i.e. considering \eqn{n/|S \times T|}{n/|S x T|} as an estimate of the space-time intensity.}
  \item{correction}{A character vector specifying the edge correction(s) to be applied among \code{"isotropic"}, \code{"border"}, \code{"modified.border"}, \code{"translate"} and \code{"none"} (see Details). The default is \code{"isotropic"}.}
- \item{infectious}{logical value. If \code{TRUE}, only future events are considered and the isotropic edge correction method is used. See Details.}}
+ \item{infectious}{Logical value. If \code{TRUE}, only future events are considered and the isotropic edge correction method is used. See Details.}}
 
 \details{Gabriel (2014) proposes the following unbiased estimator for the STIK-function, based on data giving the locations of events \eqn{x_i: i=1,\ldots,n}{x_i: i = 1,...,n} on a spatio-temporal region \eqn{S\times T}{SxT}, where \eqn{S}{S} is an arbitrary polygon and \eqn{T}{T} is a time interval:
 \deqn{\widehat{K}(u,v)=\sum_{i=1}^{n}\sum_{j\neq i}\frac{1}{w_{ij}}\frac{1}{\lambda(x_i)\lambda(x_j)}\mathbf{1}_{\lbrace \|s_i - s_j\| \leq u \ ; \ |t_i - t_j| \leq v \rbrace},}{K(u,v) = sum_{i = 1,...,n} sum_{j != i} 1/w_ij 1/(lambda(x_i) lambda(x_j)) 1{u_ij <= u ; t_j - t_i <= v},}
@@ -46,8 +46,8 @@ K-function: \deqn{\widehat{K}(u,v)=\frac{|S\times T|}{n_v(n-1)} \sum_{i=1}^{n_v}
 
 \item{Khat}{\code{ndist} x \code{ntimes} matrix containing values of \eqn{\hat{K}_{ST}(u,v).}{K(u,v)}.}
 \item{Ktheo}{\code{ndist} x \code{ntimes} matrix containing theoretical values for a Poisson process; \eqn{\pi u^2 v}{pi u^2 v} for K and \eqn{2 \pi u^2 v}{2 pi u^2 v}) for K^*.}
-\item{dist, times, infectious}{parameters passed in argument.}
-\item{correction}{the name(s) of the edge correction method(s) passed in argument.}}
+\item{dist, times, infectious}{Parameters passed in argument.}
+\item{correction}{The name(s) of the edge correction method(s) passed in argument.}}
 
 \references{
 Baddeley A., Moller J. and Waagepetersen R. (2000). Non- and semi-parametric estimation of interaction in inhomogeneous point patterns. Statistica Neerlandica, 54, 329--350.

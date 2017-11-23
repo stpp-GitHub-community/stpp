@@ -4,7 +4,7 @@
 
 \description{
 Generate one (or several) realisation(s) of the inhibition or contagious process 
-in a region S x T.
+in a region \eqn{S\times T}{S x T}.
 }
 
 \usage{
@@ -14,20 +14,19 @@ in a region S x T.
 }
 
 \arguments{
-  \item{npoints}{number of points to simulate. }
-  \item{s.region}{two-column matrix specifying polygonal region containing
+  \item{npoints}{Number of points to simulate. }
+  \item{s.region}{Two-column matrix specifying polygonal region containing
   all data locations. 
    If \code{s.region} is missing, the unit square is considered.}
-  \item{t.region}{vector containing the minimum and maximum values of
+  \item{t.region}{Vector containing the minimum and maximum values of
   the time interval. 
-   If \code{t.region} is missing, the interval [0,1] is considered.} 
-  \item{hs, ht}{function which depends on the distance between points
+   If \code{t.region} is missing, the interval \eqn{[0,1]}{[0,1]} is considered.} 
+  \item{hs, ht}{Function which depends on the distance between points
   and \code{theta}. Can be chosen among "\code{step}" and "\code{gaussian}" 
   or can refer to a user defined function which only depend on d, theta, and delta
   (see details). 
-  If \code{inhibition}=TRUE, \code{h} is monotone, increasing, and must tend
-  to 1 when the distance tends to infinity. 0 \eqn{\leq}{<=} h(d,theta) 
-  \eqn{\leq}{<=} 1. 
+  If \code{inhibition=TRUE}, \code{h} is monotone, increasing, and must tend
+  to 1 when the distance tends to infinity. 0 \eqn{\leq}{<=}\code{h(d,theta)}\eqn{\leq}{<=} 1. 
    Otherwise, \code{h} is monotone, decreasing, and must tend
   to 1 when the distance tends to 0.}
   \item{thetas, thetat}{Parameters of \code{hs} and \code{ht} functions.} 
@@ -36,9 +35,9 @@ in a region S x T.
   \code{hs} or \code{ht} and \code{recent}. Must be choosen among "\code{min}",
    "\code{max}" and "\code{prod}". }
   \item{recent}{If ``\code{all}'' consider all previous events. If
-  is an integer, say N, consider only  the N most recent events.}
-  \item{nsim}{number of simulations to generate. Default is 1. }
-  \item{discrete.time}{if TRUE, times belong to \eqn{{\bf N}}{N},
+  is an integer, say \eqn{N}{N}, consider only  the \eqn{N}{N} most recent events.}
+  \item{nsim}{Number of simulations to generate. Default is 1. }
+  \item{discrete.time}{If TRUE, times belong to \eqn{N}{N},
   otherwise belong to \eqn{{\bf R}^+}{R^+}.} 
   \item{replace}{Logical. If TRUE allows times repeat.}
   \item{inhibition}{Logical. If TRUE, an inhibition process is
@@ -48,11 +47,11 @@ in a region S x T.
 
 \value{
 A list containing:
-\item{xyt}{matrix (or list of matrices if \code{nsim}>1)
-containing the points (x,y,t) of the simulated point pattern.
+\item{xyt}{Matrix (or list of matrices if \code{nsim}>1)
+containing the points \eqn{(x,y,t)}{(x,y,t)} of the simulated point pattern.
 \code{xyt} (or any element of the list if \code{nsim}>1) is an object 
 of the class \code{stpp}.}
-\item{s.region, t.region}{parameters passed in argument.}
+\item{s.region, t.region}{Parameters passed in argument.}
 }
 
 \author{

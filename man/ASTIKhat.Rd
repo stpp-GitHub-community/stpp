@@ -20,7 +20,7 @@ ASTIKhat(xyt, s.region, t.region, lambda, dist, times, ang,
 
 \item{ang}{Angle in radians at which \eqn{\widehat{K}_{\phi}(r,t)}{K_\phi(r,t)} is computed. The argument \code{ang=2*pi} by default.}
 
-\item{correction}{A character vector specifying the edge correction(s) to be applied among "border", "modified.border", "translate" and "none". The default is "border".}
+\item{correction}{A character vector specifying the edge correction(s) to be applied among "border", "modified.border", "translate" and "none" (see \code{\link{STIKhat}}). The default is "border".}
 }
 \value{
 A list containing:
