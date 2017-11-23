@@ -82,4 +82,8 @@ Spatio-Temporal Point Patterns. Journal of Statistical Software,
 Gneiting T. (2002). Nonseparable, stationary covariance functions for space-time data. Journal of the American Statistical Association, 97, 590--600.
 
 Gonzalez, J. A., Rodriguez-Cortes, F. J., Cronie, O. and Mateu, J. (2016). Spatio-temporal point process statistics: a review. Spatial Statiscts, 18, 505--544.
+
+Siino, M., Rodriguez-Cortes, F. J., Mateu, J. and Adelfio, G. (2017). Testing for local structure in spatio-temporal point pattern data. Environmetrics. DOI: 10.1002/env.2463.
+
+Stoyan, D., Rodriguez-Cortes, F. J., Mateu, J., and Gille, W. (2017). Mark variograms for spatio-temporal point processes. Spatial Statistics. 20, 125-147.
 }
