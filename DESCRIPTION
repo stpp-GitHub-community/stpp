@@ -2,7 +2,7 @@ Package: stpp
 Version: 2.0-1
 Title: Space-Time Point Pattern Simulation, Visualisation and Analysis
 Date: 2017-11-25
-Authors@R: c(person("Edith", "Gabriel", role=c("aut","cre"),email="edith.gabriel@univ-avignon.fr"),person("Peter J","Diggle",role="aut",email="p.diggle@lancaster.ac.uk"),person("Barry","Rowlingson",role="aut",email="b.rowlingson@lancaster.ac.uk"),person("Francisco J","Rodriguez-Cortes",role="aut",email="cortesf@uji.es"))
+Authors@R: c(person("Edith", "Gabriel", role=c("aut","cre"),email="edith.gabriel@univ-avignon.fr"),person("Peter J","Diggle",role="aut"),person("Barry","Rowlingson",role="aut"),person("Francisco J","Rodriguez-Cortes",role="aut"))
 Maintainer: Francisco J Rodriguez-Cortes <cortesf@uji.es>
 Depends: R (>= 3.3.0)
 Imports: KernSmooth, ggplot2, gridExtra, plot3D, rgl, rpanel, spatstat, splancs

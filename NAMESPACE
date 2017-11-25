@@ -1,4 +1,4 @@
-useDynLib(stpp, .registration=TRUE, .fixes = "C_")
+useDynLib(stpp, .registration=TRUE)
 
 export("animation")
 export("as.3dpoints")
