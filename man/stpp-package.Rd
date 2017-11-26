@@ -63,13 +63,15 @@ Following is a summary of the main functions and the dataset in the \code{stpp} 
 \author{
 Edith Gabriel <edith.gabriel@univ-avignon.fr>, Barry Rowlingson, Peter J. Diggle and Francisco J. Rodriguez-Cortes}
 
-\references{Baddeley A., Moller J. and Waagepetersen R. (2000). Non- and semi-parametric estimation of interaction in inhomogeneous point patterns. Statistica Neerlandica, 54, 329--350.
+\references{Baddeley, A., Rubak, E., Turner, R. (2015). Spatial Point Patterns: Methodology and Applications with R. CRC Press, Boca Raton.
 
 Chan, G. and Wood A. (1997). An algorithm for simulating stationary Gaussian random fields. Applied Statistics, Algorithm Section, 46, 171--181.
 
 Chan, G. and Wood A. (1999). Simulation of stationary Gaussian vector fields. Statistics and Computing, 9, 265--268.
 
 Diggle P. , Chedwynd A., Haggkvist R. and Morris S. (1995). Second-order analysis of space-time clustering. Statistical Methods in Medical Research, 4, 124--136.
+
+Diggle, P.J., 2013. Statistical Analysis of Spatial and Spatio-Temporal Point Patterns. CRC Press, Boca Raton.
 
 Gabriel E. (2014). Estimating second-order characteristics of inhomogeneous spatio-temporal point processes: influence ofedge correction methods and intensity estimates. Methodology and computing in Applied Probabillity, 16(1).
 
