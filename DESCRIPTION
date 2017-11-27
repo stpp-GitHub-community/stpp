@@ -15,7 +15,7 @@ Suggests: knitr(>= 1.11), rmarkdown(>= 0.8.1)
 Description: Many of the models encountered in applications of point process methods to the study of spatio-temporal phenomena are covered in 'stpp'. This package provides statistical tools for analyzing the global and local second-order properties of spatio-temporal point processes, including estimators of the space-time inhomogeneous K-function and pair correlation function. It also includes tools to get static and dynamic display of spatio-temporal point patterns. See Gabriel et al. (2013) <doi:10.18637/jss.v053.i02>.
 License: GPL-3
 LazyLoad: yes
-NeedsCompilation: yes
+NeedsCompilation: no
 RoxygenNote: 6.0.1
 BuildVignettes: True
 VignetteBuilder: knitr
