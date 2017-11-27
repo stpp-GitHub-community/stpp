@@ -8,7 +8,7 @@ Authors@R: c(person("Edith", "Gabriel", role=c("aut","cre"),email="edith.gabriel
              person("Francisco J","Rodriguez-Cortes",role="aut", email="cortesf@uji,es"))
 Author: Edith Gabriel [aut, cre],
         Francisco J Rodriguez-Cortes [aut]
-Maintainer: Francisco J Rodriguez-Cortes <cortesf@uji.es>
+Maintainer: Edith Gabriel <edith.gabriel@univ-avignon.fr>
 Depends: R (>= 3.3.0), grDevices, graphics, rpanel, splancs
 Imports: KernSmooth, ggplot2, gridExtra, plot3D, rgl, spatstat
 Suggests: knitr(>= 1.11), rmarkdown(>= 0.8.1)
