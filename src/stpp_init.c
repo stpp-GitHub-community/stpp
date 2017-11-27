@@ -28,5 +28,5 @@ void R_init_stpp(DllInfo *dll)
 {
   R_registerRoutines(dll, NULL, NULL, FortranEntries, NULL);
   R_useDynamicSymbols(dll, FALSE);
-  R_forceSymbols(dll, TRUE);
+  //R_forceSymbols(dll, TRUE);
 }
