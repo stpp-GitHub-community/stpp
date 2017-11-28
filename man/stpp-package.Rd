@@ -18,6 +18,8 @@ The \code{stpp} package depends upon some other packages:
 \code{KernSmooth}: functions for kernel smoothing for Wand & Jones (1995)
 
 \code{plot3D}: Tools for plotting 3-D and 2-D data
+
+\code{ggplot2}: Create Elegant Data Visualisations Using the Grammar of Graphics
 }
 
 \details{
