@@ -19,3 +19,17 @@ install_github('stpp-GitHub-community/stpp')
 ## References
 
 - [Gabriel E., Rowlingson B., Diggle P. (2013). stpp: an R package for plotting, simulating and analyzing Spatio-Temporal Point Patterns. *Journal of Statistical Software*, **53**(2), 1-29.](https://www.jstatsoft.org/article/view/v053i02/v53i02.pdf)
+
+## CiteBibtex
+
+A BibTeX entry for LaTeX users is
+
+```
+@misc{,
+	author = {Edith Gabriel, Peter J Diggle, Barry Rowlingson and Francisco J Rodriguez-Cortes},
+	title = {stpp: Space-Time Point Pattern Simulation, Visualisation and Analysis},
+	year = {2017},
+	note = {R package version 2.0-1},
+	url = {\url{https://cran.r-project.org/web/packages/stpp/index.html}}}
+```
+
