@@ -166,7 +166,7 @@ Edith Gabriel <edith.gabriel@univ-avignon.fr>, Peter J Diggle.
  }
 
 \examples{
-\dontrun{
+\donttest{
 # non separable covariance function: 
 lgcp1 <- rlgcp(npoints=200, nx=50, ny=50, nt=50, separable=FALSE, 
 model="gneiting", param=c(1,1,1,1,1,2), var.grf=1, mean.grf=0)
@@ -183,6 +183,21 @@ N+lgcp2$Lambda[,,j]}
 image(N,col=grey((1000:1)/1000));box()
 animation(lgcp2$xyt, cex=0.8, pch=20, runtime=10, add=TRUE,
 prevalent="orange")
-}
 
+# anisotropic
+
+sigma2=0.5
+simlgcp <- rlgcp(npoints=500,nx=250, ny=200, nt=50,separable=TRUE,
+s.region=matrix(c(0,2,2,0,0,0,0.5,0.5),byrow=F,ncol=2), model="exponential", 
+param=c(1,1,1,1,1,2), var.grf=sigma2, mean.grf=-0.5*sigma2,anisotropy = TRUE,
+ani.pars = c(pi/4,0.1))
+
+N <- simlgcp$Lambda[,,1];for(j in 2:dim(simlgcp$Lambda)[3]){N <- N+simlgcp$Lambda[,,j]}
+image(x=simlgcp$grid[[1]]$x,y=simlgcp$grid[[1]]$y,z=N,col=grey((1000:1)/1000));box()
+points(simlgcp$xyt[,1:2],pch=19,cex=0.25,col=2)
+}
+\dontshow{
+lgcp4 <- rlgcp(npoints=50, nx=50, ny=50, nt=50, separable=TRUE, 
+model="exponential", param=c(1,1,1,1,1,2), var.grf=2, mean.grf=-0.5*2)
+}
 }

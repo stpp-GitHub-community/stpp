@@ -65,7 +65,8 @@ Illian JB, Penttinen A, Stoyan H and Stoyan, D. (2008). Statistical Analysis and
 
 \author{Edith Gabriel <edith.gabriel@univ-avignon.fr> }
 
-\examples{\dontrun{
+\examples{
+\donttest{
 # First example
 
 data(fmd)
@@ -80,20 +81,21 @@ mut<-Mt$y[findInterval(FMD[,3],Mt$x)]*dim(FMD)[1]
 # estimation of the spatial intensity
 h<-mse2d(as.points(FMD[,1:2]), Northcumbria, nsmse=50, range=4)
 h<-h$h[which.min(h$mse)]
-Ms<-kernel2d(as.points(FMD[,1:2]), Northcumbria, h, nx=5000, ny=5000)
+Ms<-kernel2d(as.points(FMD[,1:2]), Northcumbria, h, nx=500, ny=500)
 atx<-findInterval(x=FMD[,1],vec=Ms$x)
 aty<-findInterval(x=FMD[,2],vec=Ms$y)
 mhat<-NULL
 for(i in 1:length(atx)) mhat<-c(mhat,Ms$z[atx[i],aty[i]])
 
 # estimation of the pair correlation function
-g1 <- PCFhat(xyt=FMD, dist=1:20, times=1:20, lambda=mhat*mut/dim(FMD)[1],
+g1 <- PCFhat(xyt=FMD, dist=1:15, times=1:15, lambda=mhat*mut/dim(FMD)[1],
  s.region=northcumbria/1000,t.region=c(1,200))
 
 # plotting the estimation 
 
 plotPCF(g1)
 plotPCF(g1,type="persp",theta=-65,phi=35) 
+}
 
 # Second example
 
@@ -102,4 +104,4 @@ g2=PCFhat(xyt$xyt,dist=seq(0,0.16,by=0.02),
 times=seq(0,0.16,by=0.02),correction=c("border","translate"))
 
 plotPCF(g2,type="contour",which="border")
-}}
+}

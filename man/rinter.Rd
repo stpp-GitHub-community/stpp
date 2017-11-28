@@ -62,12 +62,13 @@ Edith Gabriel <edith.gabriel@univ-avignon.fr>, Peter J Diggle.
  \code{\link{plot.stpp}}, \code{\link{animation}} and \code{\link{stan}} for plotting space-time point patterns.
  }
  
-\examples{\dontrun{
+\examples{
 # simple inhibition process
 inh1 = rinter(npoints=200,thetas=0,deltas=0.05,thetat=0,deltat=0.001,
 inhibition=TRUE)
-stan(inh1$xyt)
+plot(inh1$xyt,style="elegant")
 
+\donttest{
 # inhibition process using hs and ht defined by the user
 hs = function(d,theta,delta,mus=0.1)
 {
@@ -109,10 +110,9 @@ animation(inh2$xyt, runtime=15, cex=0.8)
 # simple contagious process for given spatial and temporal regions
 data(northcumbria)
 cont1 = rinter(npoints=100, s.region=northcumbria, t.region=c(1,200), 
-thetas=0, deltas=5000, thetat=0, deltat=10, recent=1, inhibition=FALSE)
-
-
-plot(cont1$xyt,pch=19,s.region=cont1$s.region,mark=TRUE,mark.col=4)}
+thetas=0, deltas=10000, thetat=0, deltat=10, recent=1, inhibition=FALSE)
+plot(cont1$xyt,pch=19,s.region=cont1$s.region,mark=TRUE,mark.col=4)
+}
 }
 
 

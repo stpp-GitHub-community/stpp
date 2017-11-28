@@ -40,8 +40,7 @@ Stoyan, D., Rodriguez-Cortes, F. J., Mateu, J., and Gille, W. (2017). Mark vario
 }
 \author{Francisco J. Rodriguez Cortes <cortesf@uji.es>}
 
-\examples{\dontrun{
-
+\examples{
 # First example
 X <- sthpcpp(lambp=20, r=0.05, mu=100)
 plot(X$xyt)
@@ -59,6 +58,6 @@ plot(Xo$xyt,s.region=Northcumbria)
 
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
-plot(Xo$xyt,type="scatter",style="elegant",theta=45,phi=30,
+plot(Xo$xyt,type="scatter",style="elegant",theta=45,phi=30,cex=0.05,
 ticktype="detailed",col="black")
-}}
+}

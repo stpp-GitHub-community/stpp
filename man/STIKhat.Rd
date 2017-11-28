@@ -65,7 +65,7 @@ Gabriel E. (2014). Estimating second-order characteristics of inhomogeneous spat
 
 \author{Edith Gabriel <edith.gabriel@univ-avignon.fr> }
 
-\examples{\dontrun{
+\examples{\donttest{
 # First example
 
 data(fmd)
@@ -95,12 +95,11 @@ lambda=mhat*mut/dim(FMD)[1], dist=u, times=v, infectious=TRUE)
 # plotting the estimation
 plotK(stik1)
 plotK(stik1,type="persp",theta=-65,phi=35)
- 
+ }
 # Second example
 
 xyt=rpp(lambda=200)
 stik2=STIKhat(xyt$xyt,dist=seq(0,0.16,by=0.02),
 times=seq(0,0.16,by=0.02),correction=c("border","translate"))
-
-plotK(stik2,type="contour",legend=T,which="translate")
-}}
+plotK(stik2,type="contour",legend=TRUE,which="translate")
+}

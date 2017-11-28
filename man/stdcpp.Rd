@@ -38,7 +38,7 @@ Stoyan, D., Rodriguez-Cortes, F. J., Mateu, J., and Gille, W. (2017). Mark vario
 
 \author{Francisco J. Rodriguez Cortes <cortesf@uji.es>}
 
-\examples{\dontrun{
+\examples{
 # Ellipsoid
 Xe <- stdcpp(lambp=20,a=0.5,b=0.09,c=0.07,mu=100)
 plot(Xe$xyt)
@@ -51,6 +51,7 @@ plot(Xe$xyt,type="scatter")
 Xb <- stdcpp(lambp=20,a=0.07,b=0.07,c=0.07,mu=100)
 plot(Xb$xyt)
 
+\donttest{
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
 plot(Xb$xyt,type="mark",style="elegant")
@@ -60,10 +61,10 @@ data(northcumbria)
 Northcumbria <- northcumbria/1000
 X <- stdcpp(lambp=0.00004,a=10,b=10,c=10,mu=120,
 s.region=Northcumbria,t.region=c(0,200))
-plot(X$xyt,s.region=Northcumbria)
+plot(X$xyt,s.region=Northcumbria, cex=0.5)
 
 # Spatio-temporal 3D scatter plot
 par(mfrow=c(1,1))
-plot(X$xyt,type="scatter",theta=45,phi=30,
+plot(X$xyt,type="scatter",theta=45,phi=30,cex=0.1,
 ticktype="detailed",col="black",style="elegant")
 }}

@@ -61,19 +61,20 @@ Edith Gabriel <edith.gabriel@univ-avignon.fr> and Peter J Diggle.
 # ---------------------------
 hpp1 <- rpp(lambda=200,replace=FALSE)
 
-\dontrun{stan(hpp1$xyt)}
+\donttest{stan(hpp1$xyt)}
 
 # fixed number of points, discrete time, with time repeat.
 data(northcumbria)
 hpp2 <- rpp(npoints=500, s.region=northcumbria, t.region=c(1,1000), 
 discrete.time=TRUE)
-\dontrun{
+plot(hpp2$xyt, style="elegant")
+\donttest{
 polymap(northcumbria)
 animation(hpp2$xyt, s.region=hpp2$s.region, t.region=hpp2$t.region, 
 runtime=10, add=TRUE)
 }
 
-\dontrun{
+\donttest{
 # Inhomogeneous Poisson process
 # -----------------------------
 

@@ -69,14 +69,14 @@ Edith Gabriel <edith.gabriel@univ-avignon.fr>, Peter J Diggle.
  }
  
 \examples{
-\dontrun{
 # inhibition; spatial distribution: uniform
 inf1 = rinfec(npoints=100, alpha=0.2, beta=0.6, gamma=0.5,
 maxrad=c(0.075,0.5), t.region=c(0,50), s.distr="uniform", 
 t.distr="uniform", h="gaussian", p="min", recent="all", t0=0.02, 
 inhibition=TRUE)
-animation(inf1$xyt, cex=0.8, runtime=10)
+plot(inf1$xyt, style="elegant")
 
+\donttest{
 # contagion; spatial distribution: Poisson with intensity a given matrix
 data(fmd)
 data(northcumbria)
@@ -87,7 +87,6 @@ inf2 = rinfec(npoints=100, alpha=4, beta=0.6, gamma=20, maxrad=c(12000,20),
 s.region=northcumbria, t.region=c(1,2000), s.distr="poisson", 
 t.distr="uniform", h="step", p="min", recent=1, 
 lambda=Ls$z, inhibition=FALSE)
-
 
 image(Ls$x, Ls$y, Ls$z, col=grey((1000:1)/1000)); polygon(northcumbria,lwd=2)
 animation(inf2$xyt, add=TRUE, cex=0.7, runtime=15)

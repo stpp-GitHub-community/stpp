@@ -77,7 +77,7 @@ data(northcumbria)
 pcp1 <- rpcp(nparents=50, npoints=500, s.region=northcumbria, 
 t.region=c(1,365), cluster=c("normal","exponential"), 
 maxrad=c(5000,5))
-\dontrun{
+\donttest{
 animation(pcp1$xyt, s.region=pcp1$s.region, t.region=pcp1$t.region,
 runtime=5)
 }
@@ -86,8 +86,6 @@ runtime=5)
 lbda <- function(x,y,t,a){a*exp(-4*y) * exp(-2*t)}
 pcp2 <- rpcp(nparents=50, npoints=500, cluster="normal", lambda=lbda, 
 a=4000/((1-exp(-4))*(1-exp(-2))))
-\dontrun{
-stan(pcp2$xyt)
-}
+plot(pcp2$xyt, style="elegant")
 
 }
