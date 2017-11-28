@@ -30,6 +30,6 @@ A BibTeX entry for LaTeX users is
 	title = {stpp: Space-Time Point Pattern Simulation, Visualisation and Analysis},
 	year = {2017},
 	note = {R package version 2.0-1},
-	url = {\url{https://cran.r-project.org/web/packages/stpp/index.html}}}
+	url = {\url{https://cran.r-project.org/web/packages/stpp}}}
 ```
 
