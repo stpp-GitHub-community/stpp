@@ -6,8 +6,8 @@ C     of the space-time pair correlation function.
 C
 
       subroutine pcffunction(x,y,txy,n,xp,yp,np,s,ns,t,nt,
-     +	bsupt,binft,lambda,ks,kt,hs,ht,pcfhat,
-     +	wbi,wbimod,wt,correc)
+     +  bsupt,binft,lambda,ks,kt,hs,ht,pcfhat,
+     +  wbi,wbimod,wt,correc)
 
 cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 c
@@ -24,7 +24,7 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
 
       implicit double precision (a-h,o-z)
 
-      integer n,ns,nt,np,is,it,iu,iv,ks,kt,correc(5)
+      integer n,ns,nt,np,iu,iv,ks,kt,correc(5)
       double precision pcfhat(ns,nt,5), two, hs, ht, lambda(n)
       double precision wbi(n,ns,nt), wbimod(n,ns,nt), wt(n,n)
       dimension x(n),y(n),txy(n),xp(np+1),yp(np+1),s(ns),t(nt)
@@ -33,6 +33,8 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       double precision kern, kerns, kernt
 
       two=2d0
+      kerns=0d0
+      kernt=0d0
 
       do iu=1,ns
       do iv=1,nt
@@ -65,41 +67,41 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
             kern=kerns*kernt
             if (kern.ne.0) then
 c isotropic
-			if(correc(2).eq.1) then
+            if(correc(2).eq.1) then
                     bsup=ti+tij
                     binf=ti-tij
                     if ((bsup.le.bsupt).and.(binf.ge.binft)) then
                       vij=1d0
                       else
-				      vij=two
+                      vij=two
                     end if
                     wij=weight(xi,yi,hij,xp,yp,np)
                     wij=kern*vij*wij/(lambda(i)*lambda(j))
                     pcfhat(iu,iv,2)=pcfhat(iu,iv,2)+wij
-			end if
+            end if
 c None
-			if (correc(1).eq.1) then
+            if (correc(1).eq.1) then
                     wij=kern/(lambda(i)*lambda(j))
                     pcfhat(iu,iv,1)=pcfhat(iu,iv,1)+wij
-			end if
+            end if
 c border
-			if (correc(3).eq.1) then
-                	  wij=wbi(i,iu,iv)
-                	  wij=kern*wij/(lambda(i)*lambda(j))
-			  pcfhat(iu,iv,3)=pcfhat(iu,iv,3)+wij
-			end if
+            if (correc(3).eq.1) then
+                  wij=wbi(i,iu,iv)
+                  wij=kern*wij/(lambda(i)*lambda(j))
+              pcfhat(iu,iv,3)=pcfhat(iu,iv,3)+wij
+            end if
 c modified border
-			if (correc(4).eq.1) then
+            if (correc(4).eq.1) then
                     wij=wbimod(i,iu,iv)
-    	              wij=kern*wij/(lambda(i)*lambda(j))
-			  pcfhat(iu,iv,4)=pcfhat(iu,iv,4)+wij
-			end if
+                    wij=kern*wij/(lambda(i)*lambda(j))
+                    pcfhat(iu,iv,4)=pcfhat(iu,iv,4)+wij
+            end if
 c translate
-			if (correc(5).eq.1) then
-           	    	  wij=wt(i,j)
-			  wij=kern*wij/(lambda(i)*lambda(j))
-			  pcfhat(iu,iv,5)=pcfhat(iu,iv,5)+wij	
-			end if
+            if (correc(5).eq.1) then
+              wij=wt(i,j)
+              wij=kern*wij/(lambda(i)*lambda(j))
+              pcfhat(iu,iv,5)=pcfhat(iu,iv,5)+wij
+            end if
             end if
         end if
         end do
@@ -169,7 +171,8 @@ c--------------------------------------------------------------------
        implicit double precision (a-h,o-z)
 
        double precision x
-
+       pi=3.14159265d0
+       
        gausskernel=exp(-(x**2)/2d0)/sqrt(pi*2d0)
        gausskernel=gausskernel/h
 

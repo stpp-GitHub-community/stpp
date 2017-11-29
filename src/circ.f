@@ -286,7 +286,9 @@ c     Wave
 c
       double precision function wave(x)
 
-      double precision x,p
+      double precision x
+
+      wave=0d0
 
       if (x.gt.0) then
          wave = dsin(x)/x
@@ -309,6 +311,7 @@ c
       double precision cauchy,stable
       double precision p1,p2,p3,p4,p5,p6
 
+      res = 0d0
       p1 = param(1)
       p2 = param(2)
       p3 = param(3)
@@ -392,7 +395,7 @@ c
            if(t3 .lt. fifty) then
               cnv = (two**(t3-one))*dgamma(t3)
               p1 = t2 * d
-              it3 = dint(t3)
+              it3 = IDINT(t3)
               call rkbesl(p1,t3-it3,it3+1,1,bk,ncalc)
               matern = t1*(p1**t3)*bk(it3+1)/cnv
            else
@@ -492,6 +495,8 @@ C---------------------------------------------------------------------
       DATA ESTF/4.18341D1, 7.1075D0, 6.4306D0, 4.25110D1, 1.35633D0,
      1          8.45096D1, 2.0D1/
 C---------------------------------------------------------------------
+      ITEMP=0d0
+
       EX = X
       ENU = ALPHA
       NCALC = MIN(NB,0)-2
@@ -766,7 +771,7 @@ C--------------------------------------------------------------------
   500 RETURN
 C---------- Last line of RKBESL ----------
       END
-      DOUBLE PRECISION FUNCTION DGAMMA(X)
+      DOUBLE PRECISION FUNCTION DGAMMAX(X)
 C----------------------------------------------------------------------
 C
 C This routine calculates the GAMMA function for a real argument X.
@@ -917,7 +922,7 @@ C  Final adjustments and return
 C----------------------------------------------------------------------
       IF (PARITY) RES = -RES
       IF (FACT .NE. ONE) RES = FACT / RES
-  900 DGAMMA = RES
+  900 DGAMMAX = RES
       RETURN
 C ---------- Last line of GAMMA ----------
       END

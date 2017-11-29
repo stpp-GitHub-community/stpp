@@ -33,6 +33,8 @@ cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
       double precision kern, kerns, kernt
 
       two=2d0
+      kerns=0d0
+      kernt=0d0
 
       do j=1,n
        do iu=1,ns

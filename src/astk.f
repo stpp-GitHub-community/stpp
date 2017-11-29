@@ -15,6 +15,8 @@ C     of the anisotropic spatio-temporal inhomogeneous K-function
 
       two=2d0      
       pi=3.14159265d0
+      angij=0d0
+      
       do iu=1,ns
        do iv=1,nt
         do i=1,n
@@ -33,7 +35,7 @@ C     of the anisotropic spatio-temporal inhomogeneous K-function
 c     Quadrant one
       if ((xc(j).gt.0d0).and.(yc(j).gt.0d0)) then
         angij=datan(yc(j)/xc(j))
-c     Quadrant two		   
+c     Quadrant two
       else if ((xc(j).lt.0d0).and.(yc(j).gt.0d0)) then
         angij=datan(yc(j)/xc(j))+pi
 c     Quadrant three
