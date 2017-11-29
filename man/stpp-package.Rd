@@ -63,7 +63,7 @@ Following is a summary of the main functions and the dataset in the \code{stpp} 
 }
 
 \author{
-Edith Gabriel <edith.gabriel@univ-avignon.fr>, Barry Rowlingson, Peter J. Diggle and Francisco J. Rodriguez-Cortes}
+Edith Gabriel <edith.gabriel@univ-avignon.fr>, Peter J. Diggle, Barry Rowlingson and Francisco J. Rodriguez-Cortes}
 
 \references{Baddeley, A., Rubak, E., Turner, R. (2015). Spatial Point Patterns: Methodology and Applications with R. CRC Press, Boca Raton.
 
