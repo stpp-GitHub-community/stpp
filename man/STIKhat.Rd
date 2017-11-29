@@ -45,7 +45,7 @@ K-function: \deqn{\widehat{K}(u,v)=\frac{|S\times T|}{n_v(n-1)} \sum_{i=1}^{n_v}
 \value{ A list containing:
 
 \item{Khat}{\code{ndist} x \code{ntimes} matrix containing values of \eqn{\hat{K}_{ST}(u,v).}{K(u,v)}.}
-\item{Ktheo}{\code{ndist} x \code{ntimes} matrix containing theoretical values for a Poisson process; \eqn{\pi u^2 v}{pi u^2 v} for K and \eqn{2 \pi u^2 v}{2 pi u^2 v}) for K^*.}
+\item{Ktheo}{\code{ndist} x \code{ntimes} matrix containing theoretical values for a Poisson process; \eqn{\pi u^2 v}{pi u^2 v} for \eqn{K}{K} and \eqn{2 \pi u^2 v}{2 pi u^2 v} for \eqn{K^*}{K^*}.}
 \item{dist, times, infectious}{Parameters passed in argument.}
 \item{correction}{The name(s) of the edge correction method(s) passed in argument.}}
 

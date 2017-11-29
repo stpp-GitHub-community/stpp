@@ -17,7 +17,7 @@ main=NULL,...) }
  }
 
 \seealso{
- \code{\link{contour}}, \code{\link{persp}}, \code{link{image}} and \code{\link{PCFhat}} for an example.
+ \code{\link{contour}}, \code{\link{persp}}, \code{\link{image}} and \code{\link{PCFhat}} for an example.
  }
 
 \author{

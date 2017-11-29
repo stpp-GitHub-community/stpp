@@ -9,7 +9,7 @@ deliberately excludes confidential information on farms at risk in the
 study-region. It is included in the package purely as an illustrative example.
 }
 \usage{data(fmd)}
-\format{A matrix containing (x,y,t) coordinates of the 648 observations.}
+\format{A matrix containing \eqn{(x,y,t)}{(x,y,t)} coordinates of the 648 observations.}
 
 \references{
 Diggle, P., Rowlingson, B. and Su, T. (2005). Point process methodology
