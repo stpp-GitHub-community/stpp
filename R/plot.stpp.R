@@ -41,12 +41,12 @@ plot.stpp <- function(x, s.region=NULL, t.region=NULL, style="generic", type="pr
         sd <- data.frame(x=x[,1],y=x[,2])
         td <- data.frame(t=sort(x[,3]),y=seq(1,length(x[,3])))
         if (is.null(s.region)){
-          sp <- ggplot(sd,aes_string("x","y"))+geom_point()+ggtitle("xy-locations")
+          sp <- ggplot(sd,aes_string("x","y"))+geom_point()+theme(text=element_text(...))+ggtitle("xy-locations")
         }else{
           SW <- data.frame(x=c(s.region[,1],s.region[1,1]),y=c(s.region[,2],s.region[1,2]))
-          sp <- ggplot(sd,aes_string("x","y"))+geom_path(data=SW,aes_string("x","y"))+geom_point()+ggtitle("xy-locations")
+          sp <- ggplot(sd,aes_string("x","y"))+geom_path(data=SW,aes_string("x","y"))+geom_point()+theme(text=element_text(...))+ggtitle("xy-locations")
         }
-          tp <- ggplot(td,aes_string("t","y"))+geom_line()+labs(y="")+ggtitle("cumulative number")
+          tp <- ggplot(td,aes_string("t","y"))+geom_line()+labs(y="")+theme(text=element_text(...))+ggtitle("cumulative number")
           grid.arrange(sp,tp,ncol=2,nrow=1)
       }
     }
@@ -105,13 +105,13 @@ plot.stpp <- function(x, s.region=NULL, t.region=NULL, style="generic", type="pr
 	  if (style=="elegant"){
 	    sdm <- data.frame(x=x[,1],y=x[,2],t=x[,3])
 	    if (is.null(s.region)){
-	    spm <- ggplot(sdm,aes_string("x","y"))+geom_point(aes(size=t),shape=1,show.legend=FALSE)+scale_shape(solid=FALSE)+ggtitle("Time marks")
+	    spm <- ggplot(sdm,aes_string("x","y"))+geom_point(aes(size=t),shape=1,show.legend=FALSE)+scale_shape(solid=FALSE)+theme(text=element_text(...))+ggtitle("Time marks")
 	    }else{
 	      SW <- data.frame(x=c(s.region[,1],s.region[1,1]),y=c(s.region[,2],s.region[1,2]))
-	      spm <- ggplot(sdm,aes_string("x","y"))+geom_path(data=SW,aes_string("x","y"))+geom_point(aes(size=t),shape=1,show.legend=FALSE)+ggtitle("Time marks")
+	      spm <- ggplot(sdm,aes_string("x","y"))+geom_path(data=SW,aes_string("x","y"))+geom_point(aes(size=t),shape=1,show.legend=FALSE)+theme(text=element_text(...))+ggtitle("Time marks")
 	    }
 	    tdm <- data.frame(t=t,sn=sn)
-	    tpm <- ggplot(tdm,aes_string("t","sn"))+geom_bar(stat="identity",colour="black")+labs(y="||(x,y)||")+ggtitle("Space marks")
+	    tpm <- ggplot(tdm,aes_string("t","sn"))+geom_bar(stat="identity",colour="black")+labs(y="||(x,y)||")+theme(text=element_text(...))+ggtitle("Space marks")
 	    grid.arrange(spm,tpm,ncol=2,nrow=1)
 	  }
 	}

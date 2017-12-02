@@ -29,7 +29,7 @@ importFrom("rgl","par3d","rotationMatrix","surface3d","plot3d","axis3d","aspect3
 importFrom("spatstat","as.im","verifyclass","owin","as.rectangle","make.even.breaks","inside.owin","ppp","bdist.points","eroded.areas","edge.Trans","rMatClust","area")
 importFrom("KernSmooth","dpik")
 importFrom("plot3D","scatter3D")
-importFrom("ggplot2","ggplot","aes_string","geom_point","ggtitle","geom_path","geom_line","labs","aes","scale_shape","geom_bar")
+importFrom("ggplot2","ggplot","aes_string","geom_point","ggtitle","geom_path","geom_line","labs","aes","scale_shape","geom_bar","theme","element_text")
 importFrom("gridExtra","grid.arrange")
 
 S3method(plot,stpp)
