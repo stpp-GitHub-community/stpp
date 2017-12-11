@@ -362,7 +362,7 @@ rlgcp <- function(s.region, t.region, replace=TRUE, npoints=NULL, nsim=1, nx=100
 
       XX=rep(s.grid$X,nt)
       YY=rep(s.grid$Y,nt)
-      TT=rep(t.grid$times,length(s.grid$X))
+      TT=rep(t.grid$times,each=length(s.grid$X))
       
 #      df=NULL
 #      for(nl in 1:nt)
@@ -431,6 +431,7 @@ rlgcp <- function(s.region, t.region, replace=TRUE, npoints=NULL, nsim=1, nx=100
 #      y=resani[2,]
 #      }
       pattern.interm <- xyt.init[index.times,]
+      pattern.interm <- xyt.init
 
       if (nsim==1)
         {
