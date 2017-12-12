@@ -1,5 +1,5 @@
 Package: stpp
-Version: 2.0-1
+Version: 2.0-2
 Title: Space-Time Point Pattern Simulation, Visualisation and Analysis
 Date: 2017-12-12
 Authors@R: c(person("Edith", "Gabriel", role=c("aut","cre"),email="edith.gabriel@univ-avignon.fr"),
