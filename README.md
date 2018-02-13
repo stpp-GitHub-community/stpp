@@ -25,11 +25,11 @@ install_github('stpp-GitHub-community/stpp')
 A BibTeX entry for LaTeX users is
 
 ```
-@misc{,
+@misc{gdrrc17,
 	author = {Edith Gabriel, Peter J Diggle, Barry Rowlingson and Francisco J Rodriguez-Cortes},
 	title = {stpp: Space-Time Point Pattern Simulation, Visualisation and Analysis},
 	year = {2017},
-	note = {R package version 2.0-1},
+	note = {R package version 2.0-2},
 	url = {\url{https://cran.r-project.org/web/packages/stpp}}}
 ```
 
