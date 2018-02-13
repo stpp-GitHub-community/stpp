@@ -393,7 +393,7 @@ c
            matern = t1
         else
            if(t3 .lt. fifty) then
-              cnv = (two**(t3-one))*dgamma(t3)
+              cnv = (two**(t3-one))*DGAMMAX(t3)
               p1 = t2 * d
               it3 = IDINT(t3)
               call rkbesl(p1,t3-it3,it3+1,1,bk,ncalc)
