@@ -15,6 +15,7 @@ and thereafter run the commands:
 require(devtools)
 install_github('stpp-GitHub-community/stpp')
 ```
+Ubuntu users can follow the instructions in this [discussion on stackoverflow](https://stackoverflow.com/questions/44382368/rgdal-installation-difficulty-on-ubuntu-16-04-lts) to avoid complexity in installing some of the packages, particularly rgdal
 
 ## References
 
