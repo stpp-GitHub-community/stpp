@@ -15,6 +15,7 @@ and thereafter run the commands:
 require(devtools)
 install_github('stpp-GitHub-community/stpp')
 ```
+Ubuntu users can follow the instructions in this discussion on stackoverflow to avoid complexity in installing some of the packages, particularly [rgdal](https://stackoverflow.com/questions/44382368/rgdal-installation-difficulty-on-ubuntu-16-04-lts) and [rgl](https://stackoverflow.com/questions/31820865/error-in-installing-rgl-package).
 
 ## References
 
@@ -26,10 +27,10 @@ A BibTeX entry for LaTeX users is
 
 ```
 @misc{gdrrc17,
-	author = {Edith Gabriel, Peter J Diggle, Barry Rowlingson and Francisco J Rodriguez-Cortes},
+	author = {Edith Gabriel and Peter J. Diggle and Barry Rowlingson and Francisco J. Rodr\'iguez-Cort\'es},
 	title = {stpp: Space-Time Point Pattern Simulation, Visualisation and Analysis},
-	year = {2017},
-	note = {R package version 2.0-2},
-	url = {\url{https://cran.r-project.org/web/packages/stpp}}}
+	year = {2018},
+	note = {R package version 2.0-3},
+	url = {https://cran.r-project.org/web/packages/stpp}}
 ```
 
