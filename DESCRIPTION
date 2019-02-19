@@ -5,7 +5,7 @@ Date: 2018-01-14
 Authors@R: c(person("Edith", "Gabriel", role=c("aut","cre"),email="edith.gabriel@univ-avignon.fr"),
              person("Peter J","Diggle",role="aut",email="p.diggle@lancaster.ac.uk"),
              person("Barry","Rowlingson",role="aut",email="b.rowlingson@lancaster.ac.uk"),
-             person("Francisco J","Rodriguez-Cortes",role="aut", email="cortesf@uji.es"))
+             person("Francisco J","Rodriguez-Cortes",role="aut", email="frrodriguezc@unal.edu.co"))
 Maintainer: Edith Gabriel <edith.gabriel@univ-avignon.fr>
 Depends: R (>= 3.3.0), grDevices, graphics, rpanel, splancs
 Imports: KernSmooth, ggplot2, gridExtra, plot3D, rgl, spatstat
