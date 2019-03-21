@@ -35,10 +35,10 @@ A BibTeX entry for LaTeX users is
 ```
 ### Autors:
 
-####*[Edith Gabriel, Avignon University, Avignon, France](http://edith.gabriel.pagesperso-orange.fr/Edith.html)*
+[Edith Gabriel, Avignon University, Avignon, France](http://edith.gabriel.pagesperso-orange.fr/Edith.html)
 
-####*[Peter J. Diggle, Lancaster University, Lancaster, UK](https://www.lancaster.ac.uk/staff/diggle/)*
+[Peter J. Diggle, Lancaster University, Lancaster, UK](https://www.lancaster.ac.uk/staff/diggle/)
 
-####*[Barry Rowlingson, Lancaster University, Lancaster, UK](http://barry.rowlingson.com/)*
+[Barry Rowlingson, Lancaster University, Lancaster, UK](http://barry.rowlingson.com/)
 
-####*[Francisco J. Rodríguez-Cortés, National University of Colombia, Medellín, Colombia](https://fjrodriguezcortes.wordpress.com/)*
+[Francisco J. Rodríguez-Cortés, National University of Colombia, Medellín, Colombia](https://fjrodriguezcortes.wordpress.com/)
