@@ -1,13 +1,4 @@
-CHANGES IN stpp VERSION 2.0.1
+CHANGES IN stpp VERSION 2.0.4
 
-* plot.stpp has been modified for plotting xy-locations and cumulative distribution of times, space-time 3D scatter and time-mark space-mark in a generic or elegant style 
 
-* Fixed problem in functions (rlgcp) and (rpp)
- 
-* Two new space-time cluster models have been included
- 
-* STIKhat and PCFhat have been improved to verify the assumptions space-time of duplicate (spatio-temporal) points
-
-* The functions ASTIKhat and LISTAhat have been included
-
-* rlgcp now includes anisotropic spatio-temporal covariances
+* The function KLISTAhat have been included

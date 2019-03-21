@@ -29,8 +29,16 @@ A BibTeX entry for LaTeX users is
 @misc{gdrrc17,
 	author = {Edith Gabriel and Peter J. Diggle and Barry Rowlingson and Francisco J. Rodr\'iguez-Cort\'es},
 	title = {stpp: Space-Time Point Pattern Simulation, Visualisation and Analysis},
-	year = {2018},
-	note = {R package version 2.0-3},
+	year = {2019},
+	note = {R package version 2.0-4},
 	url = {https://cran.r-project.org/web/packages/stpp}}
 ```
+### Autors:
 
+####*[Edith Gabriel, Avignon University, Avignon, France](http://edith.gabriel.pagesperso-orange.fr/Edith.html)*
+
+####*[Peter J. Diggle, Lancaster University, Lancaster, UK](https://www.lancaster.ac.uk/staff/diggle/)*
+
+####*[Barry Rowlingson, Lancaster University, Lancaster, UK](http://barry.rowlingson.com/)*
+
+####*[Francisco J. Rodríguez-Cortés, National University of Colombia, Medellín, Colombia](https://fjrodriguezcortes.wordpress.com/)*

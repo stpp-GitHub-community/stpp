@@ -35,7 +35,7 @@ Compute an estimation of the Anisotropic Space-Time inhomogeneous \eqn{K}{K}-fun
 }
 
 \author{
-Francisco J. Rodriguez-Cortes <cortesf@uji.es> 
+Francisco J. Rodriguez-Cortes <frrodriguezc@unal.edu.co> 
 }
 \references{
 Illian, J. B., Penttinen, A., Stoyan, H. and Stoyan, D. (2008). Statistical Analysis and Modelling of Spatial Point Patterns. John Wiley and Sons, London.

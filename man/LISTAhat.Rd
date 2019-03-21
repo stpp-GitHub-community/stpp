@@ -62,4 +62,4 @@ Siino, M., Rodriguez-Cortes, F. J., Mateu, J. and Adelfio, G. (2017). Testing fo
 
 Stoyan, D. and Stoyan, H. (1994). Fractals, random shapes, and point fields: methods of geometrical statistics. Chichester: Wiley.
 }
-\author{Francisco J. Rodriguez-Cortes <cortesf@uji.es>}
+\author{Francisco J. Rodriguez-Cortes <frrodriguezc@unal.edu.co>}
