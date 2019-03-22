@@ -1,8 +1,8 @@
 C
-C     Francisco J., Rodriguez-Cortes, November 2017
+C     Francisco J., Rodriguez-Cortes, March 2019
 C
 C     This function provides an edge corrected estimate
-C     of the space-time LISTA pair correlation function.
+C     of the space-time K LISTA.
 C
 
       subroutine klistafunction(i,xi,yi,ti,x,y,txy,n,xp,yp,np,s,ns,t,nt,
