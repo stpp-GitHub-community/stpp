@@ -145,7 +145,7 @@ invisible(return(list(list.KLISTA = all.klista, klistatheo = klistatheo, dist = 
                     as.double(dist), as.integer(ndist), 
                     as.double(times), as.integer(ntimes),
                     as.double(bsupt), as.double(binft), 
-                    as.double(lambda), (klistahat), 
+                    as.double(lambda), (klistahat),
                     as.double(wbi), as.double(wbimod), 
                     as.double(wt), as.integer(correc2))
   
