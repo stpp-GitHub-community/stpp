@@ -122,7 +122,8 @@ options(warn = 0)
 all.klista <- sapply(seq(1,npt), function(i) .i.KLISTAhat(i,id,ptsx,ptsy,ptst,npt,polyx,polyy,np,dist,ndist,times,ntimes,bsupt,binft,lambda,wbi,wbimod,wt,correc2,correc,area),simplify="array")
 
 correction = correc[id]
-klistatheo = array(1, dim = c(ndist, ntimes))
+klistatheo <- matrix(0,ncol=length(times),nrow=length(dist))
+for(i in 1:length(dist)) klistatheo[i,] <- pi*(dist[i]^2)*times
 
 invisible(return(list(list.KLISTA = all.klista, klistatheo = klistatheo, dist = dist, times = times, correction = correction)))
 }
