@@ -11,9 +11,9 @@ PCFhat <-function(xyt, s.region, t.region, dist, times, lambda, ks = "box", hs, 
   correc2 = rep(0, 5)
   correc2[id] = 1
   
-  dup <- any(duplicated(data.frame(xyt[,1], xyt[,2], xyt[,3]), fromLast = TRUE))
+  dup <- any(duplicated(data.frame(xyt[,1], xyt[,2], xyt[,3])))
   if (dup == TRUE){
-    messnbd <- paste("space-time data contain duplicated points")
+    messnbd <- paste("Space-time data contains duplicated points")
     warning(messnbd,call. = FALSE)
   }
   
