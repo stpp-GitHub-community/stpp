@@ -14,12 +14,20 @@ STIKhat <- function(xyt, s.region, t.region, dist, times, lambda, correction = "
   correc2 = rep(0,5)
   correc2[id] = 1	
   
-  dup <- duplicated(data.frame(xyt[,1], xyt[,2], xyt[,3]), fromLast = TRUE)[1]
+  dup <- any(duplicated(data.frame(xyt[,1], xyt[,2], xyt[,3])))
   if (dup == TRUE){
-    messnbd <- paste("space-time data contain duplicated points")
+    messnbd <- paste("Space-time data contains duplicated points")
     warning(messnbd,call. = FALSE)
   }
-
+	
+	if(!missing(lambda)){
+		dup1 <- any(duplicated(data.frame(xyt[,1], xyt[,2])))
+		if (dup1 == TRUE){
+			messnbd1 <- paste("xyt has spatially-coincident points. This is OK for STIKhat() computation but you should take care in the methods you used for estimating the spatial intensity in the 'lambda' term.")
+			warning(messnbd1,call. = FALSE)
+		}    
+	}
+	
   if (missing(s.region)) s.region <- sbox(xyt[,1:2], xfrac=0.01, yfrac=0.01)
   if (missing(t.region)){
       xr = range(xyt[,3], na.rm = TRUE)
