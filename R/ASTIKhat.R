@@ -12,7 +12,7 @@ ASTIKhat <- function(xyt,s.region,t.region,lambda,dist,times,ang=2*pi,correction
   correc2 = rep(0,4)
   correc2[id] = 1	
   
-  dup <- duplicated(data.frame(xyt[,1], xyt[,2], xyt[,3]), fromLast = TRUE)[1]
+  dup <- any(duplicated(data.frame(xyt[,1], xyt[,2], xyt[,3]), fromLast = TRUE))
   if (dup == TRUE){
     messnbd <- paste("space-time data contain duplicated points")
     warning(messnbd,call. = FALSE)
