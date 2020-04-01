@@ -1,8 +1,8 @@
 Package: stpp
-Version: 2.0-4
+Version: 2.0-5
 Title: Space-Time Point Pattern Simulation, Visualisation and Analysis
-Date: 2019-03-21
-Authors@R: c(person("Edith", "Gabriel", role=c("aut","cre"),email="edith.gabriel@univ-avignon.fr"),
+Date: 2020-04-01
+Authors@R: c(person("Edith", "Gabriel", role=c("aut","cre"),email="edith.gabriel@inrae.fr"),
              person("Peter J","Diggle",role="aut",email="p.diggle@lancaster.ac.uk"),
              person("Barry","Rowlingson",role="aut",email="b.rowlingson@lancaster.ac.uk"),
              person("Francisco J","Rodriguez-Cortes",role="aut", email="frrodriguezc@unal.edu.co"))
@@ -13,9 +13,13 @@ Suggests: knitr(>= 1.11), rmarkdown(>= 0.8.1)
 Description: Many of the models encountered in applications of point process methods to the study of spatio-temporal phenomena are covered in 'stpp'. This package provides statistical tools for analyzing the global and local second-order properties of spatio-temporal point processes, including estimators of the space-time inhomogeneous K-function and pair correlation function. It also includes tools to get static and dynamic display of spatio-temporal point patterns. See Gabriel et al (2013) <doi:10.18637/jss.v053.i02>.
 License: GPL-3
 LazyLoad: yes
-Encoding: UTF-8
-NeedsCompilation: no
-RoxygenNote: 6.1.1
+NeedsCompilation: yes
+RoxygenNote: 6.0.1
 BuildVignettes: True
 VignetteBuilder: knitr
 BugReports: https://github.com/stpp-GitHub-community
+Packaged: 2018-02-14 01:43:24 UTC; frajaroco
+Author: Edith Gabriel [aut, cre],
+  Peter J Diggle [aut],
+  Barry Rowlingson [aut],
+  Francisco J Rodriguez-Cortes [aut]
