@@ -1,4 +1,4 @@
-CHANGES IN stpp VERSION 2.0.4
+CHANGES IN stpp VERSION 2.0.5
 
-
-* The function KLISTAhat have been included
+* The function 'KLISTAhat' have been included
+* Bug fixed on function 'rlgcp'
