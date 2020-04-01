@@ -63,7 +63,7 @@ Gabriel E. (2014). Estimating second-order characteristics of inhomogeneous spat
 
 Illian JB, Penttinen A, Stoyan H and Stoyan, D. (2008). Statistical Analysis and Modelling of Spatial Point Patterns. John Wiley and Sons, London.}
 
-\author{Edith Gabriel <edith.gabriel@univ-avignon.fr> }
+\author{Edith Gabriel <edith.gabriel@inrae.fr> }
 
 \examples{
 \donttest{

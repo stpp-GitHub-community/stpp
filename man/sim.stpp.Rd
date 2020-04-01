@@ -38,7 +38,7 @@ of the class \code{stpp}.}
 }
 
 \author{
-Edith Gabriel <edith.gabriel@univ-avignon.fr>
+Edith Gabriel <edith.gabriel@inrae.fr>
 }
 
 \seealso{

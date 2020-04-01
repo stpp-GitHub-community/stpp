@@ -17,5 +17,5 @@ is.3dpoints(x)
 is.3dpoints returns TRUE if \code{x} is a spatio-temporal points object, FALSE
 otherwise.}
 
-\author{Edith Gabriel <edith.gabriel@univ-avignon.fr>, Peter Diggle, Barry
+\author{Edith Gabriel <edith.gabriel@inrae.fr>, Peter Diggle, Barry
 Rowlingson.}

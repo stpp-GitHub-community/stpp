@@ -37,4 +37,4 @@ scales=TRUE, border.frac=0.05, add=FALSE)
 None
 }
 
-\author{Peter J Diggle, Edith Gabriel <edith.gabriel@univ-avignon.fr>.}
+\author{Peter J Diggle, Edith Gabriel <edith.gabriel@inrae.fr>.}

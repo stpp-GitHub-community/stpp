@@ -54,8 +54,7 @@ Following is a summary of the main functions and the dataset in the \code{stpp} 
 \item \code{\link{PCFhat}}: space-time inhomogeneous pair correlation function,
 \item \code{\link{STIKhat}}: space-time inhomogeneous K-function,
 \item \code{\link{ASTIKhat}}: Anisotropic space-time inhomogeneous K-function,
-\item \code{\link{LISTAhat}}: space-time inhomogeneous pair correlation LISTA functions.
-\item \code{\link{KLISTAhat}}: space-time inhomogeneous K LISTA functions.
+\item \code{\link{LISTAhat}}: space-time inhomogeneous pair correlation LISTA funcrions.
 }
 
 \emph{Dataset}

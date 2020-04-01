@@ -158,7 +158,7 @@ and Cox processes. Scandinavian Journal of Statistics, 41, 414--435.
 }
 
 \author{
-Edith Gabriel <edith.gabriel@univ-avignon.fr>, Peter J Diggle.
+Edith Gabriel <edith.gabriel@inrae.fr>, Peter J Diggle.
 }
 
 \seealso{
@@ -188,7 +188,7 @@ prevalent="orange")
 
 sigma2=0.5
 simlgcp <- rlgcp(npoints=500,nx=250, ny=200, nt=50,separable=TRUE,
-s.region=matrix(c(0,2,2,0,0,0,0.5,0.5),byrow=F,ncol=2), model="exponential", 
+s.region=matrix(c(0,2,2,0,0,0,0.5,0.5),byrow=FALSE,ncol=2), model="exponential", 
 param=c(1,1,1,1,1,2), var.grf=sigma2, mean.grf=-0.5*sigma2,anisotropy = TRUE,
 ani.pars = c(pi/4,0.1))
 

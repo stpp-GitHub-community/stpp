@@ -63,7 +63,7 @@ Gabriel E., Rowlingson B., Diggle P. (2013). stpp: an R package for plotting, si
 Gabriel E. (2014). Estimating second-order characteristics of inhomogeneous spatio-temporal point processes: influence of edge correction methods and intensity estimates. Methodology and computing in Applied Probabillity, 16(2), 411--431.
 }
 
-\author{Edith Gabriel <edith.gabriel@univ-avignon.fr> }
+\author{Edith Gabriel <edith.gabriel@inrae.fr> }
 
 \examples{\donttest{
 # First example

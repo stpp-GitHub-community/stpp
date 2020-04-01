@@ -23,7 +23,7 @@ rpp(lambda, s.region, t.region, npoints=NULL, nsim=1, replace=TRUE,
   \item{t.region}{Vector containing the minimum and maximum values of
   the time interval. 
    If \code{t.region} is missing, the interval \eqn{[0,1]}{[0,1]} is considered.}
-  \item{replace}{Logical allowing times repeat.} 
+  \item{replace}{Logical allowing times repeat (should only be used when \code{discrete.time=TRUE}).} 
   \item{npoints}{Number of points to simulate. If \code{NULL}, the
   number of points is from a 
    Poisson distribution with mean the double integral of \code{lambda} over 
@@ -49,7 +49,7 @@ of the class \code{stpp}.}
 }
 
 \author{
-Edith Gabriel <edith.gabriel@univ-avignon.fr> and Peter J Diggle.
+Edith Gabriel <edith.gabriel@inrae.fr> and Peter J Diggle.
 }
 
 \seealso{

@@ -18,4 +18,4 @@ The output is an object of the class \code{stpp}.
 as.3dpoints tries to return the argument(s) as a spatio-temporal points object.
 }
 
-\author{Edith Gabriel <edith.gabriel@univ-avignon.fr>, Peter Diggle, Barry Rowlingson.}
+\author{Edith Gabriel <edith.gabriel@inrae.fr>, Peter Diggle, Barry Rowlingson.}
