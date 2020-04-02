@@ -6,8 +6,7 @@ C
 
        subroutine gtecore(x,y,txy,n,t,nt,kt,ht,gtet)
 
-
-       implicit real*8(a-h,o-z)
+       implicit double precision (a-h,o-z)
 
        integer i,j,iv,n,nt,kt
        double precision wij,vij,ht,kernt,gtem,gten,gtet,x,y,txy

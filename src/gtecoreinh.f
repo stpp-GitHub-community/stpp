@@ -7,7 +7,7 @@ C
       subroutine gtecoreinh(x,y,txy,n,t,nt,tlambda,kt,ht,wrt,wtt,
      +     wbit,wbimodt,wst,edg,gtet)
      
-      implicit real*8(a-h,o-z)
+      implicit double precision (a-h,o-z)
 
       integer i,j,iv,n,nt,kt,edg
       double precision inhwij,inhvij,ht,kernt,gteminh,gteninh,gtet
