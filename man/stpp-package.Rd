@@ -55,6 +55,9 @@ Following is a summary of the main functions and the dataset in the \code{stpp} 
 \item \code{\link{STIKhat}}: space-time inhomogeneous K-function,
 \item \code{\link{ASTIKhat}}: Anisotropic space-time inhomogeneous K-function,
 \item \code{\link{LISTAhat}}: space-time inhomogeneous pair correlation LISTA funcrions.
+\item \code{\link{KLISTAhat}}: space-time inhomogeneous K LISTA functions.
+\item \code{\link{gsp}}: spatial mark variogram function.
+\item \code{\link{gte}}: Temporal mark variogram function.
 }
 
 \emph{Dataset}
