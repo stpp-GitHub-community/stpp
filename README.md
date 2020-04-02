@@ -26,7 +26,7 @@ Ubuntu users can follow the instructions in this discussion on stackoverflow to 
 A BibTeX entry for LaTeX users is
 
 ```
-@misc{gdrrc20,
+@misc{gdrrc00,
 	author = {Edith Gabriel and Peter J. Diggle and Barry Rowlingson and Francisco J. Rodr\'iguez-Cort\'es},
 	title = {stpp: Space-Time Point Pattern Simulation, Visualisation and Analysis},
 	year = {2020},
