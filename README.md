@@ -26,10 +26,10 @@ Ubuntu users can follow the instructions in this discussion on stackoverflow to 
 A BibTeX entry for LaTeX users is
 
 ```
-@misc{gdrrc17,
+@misc{gdrrc20,
 	author = {Edith Gabriel and Peter J. Diggle and Barry Rowlingson and Francisco J. Rodr\'iguez-Cort\'es},
 	title = {stpp: Space-Time Point Pattern Simulation, Visualisation and Analysis},
-	year = {2019},
+	year = {2020},
 	note = {R package version 2.0-4},
 	url = {https://cran.r-project.org/web/packages/stpp}}
 ```
