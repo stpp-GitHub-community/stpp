@@ -6,7 +6,7 @@ C
 
        subroutine gspcore(x,y,txy,n,s,ns,ks,hs,gsps)
 
-       implicit real*8(a-h,o-z)
+      implicit double precision (a-h,o-z)
 
        integer i,j,iu,n,ns,ks
        double precision wij,vij,hs,kerns,gspm,gspn,gsps,x,y,txy
