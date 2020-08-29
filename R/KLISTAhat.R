@@ -72,7 +72,7 @@ ptst <- xytimes
 npt <- length(ptsx)
 ndist <- length(dist)
 ntimes <- length(times)
-area <- areapl(s.region) * (bsupt - binft)
+area <- area(bdry) * (bsupt - binft)
 np <- length(s.region[, 1])
 polyx <- c(s.region[, 1], s.region[1, 1])
 polyy <- c(s.region[, 2], s.region[1, 2])
