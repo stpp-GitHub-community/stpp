@@ -1,11 +1,11 @@
 PCFhat <-function(xyt, s.region, t.region, dist, times, lambda, ks = "box", hs, kt = "box", ht, correction = "isotropic"){
-
+  
   verifyclass(xyt,"stpp")
   
   correc = c("none", "isotropic", "border", "modified.border", "translate")
   id <- match(correction, correc, nomatch = NA)
   if (any(nbg <- is.na(id))) {mess <- paste("unrecognised correction method:", paste(dQuote(correction[nbg]), collapse = ", "))
-    stop(mess, call. = FALSE)
+  stop(mess, call. = FALSE)
   }
   id = unique(id)
   correc2 = rep(0, 5)
@@ -140,7 +140,7 @@ PCFhat <-function(xyt, s.region, t.region, dist, times, lambda, ks = "box", hs, 
     wbi[is.na(wbi)] <- 0
     wbimod[is.na(wbimod)] <- 0
   }
-
+  
   # correction=="translate"
   if (any(correction == "translate")) {
     wtt = .overlap.tint(xytimes, t.region)
