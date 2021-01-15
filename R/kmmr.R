@@ -94,7 +94,7 @@ kmmr <- function(xyt,s.region,s.lambda,ds,ks="epanech",hs,correction="none",appr
   if (appro2[1]==1){
     kmmrout <- .Fortran("kmmrcore",as.double(ptsx),as.double(ptsy),as.double(ptst),
                         as.integer(npt),as.double(ds),as.integer(nds),as.integer(ker2)
-                        ,as.double(hs),(ekmmr),PACKAGE="msfstpp")
+                        ,as.double(hs),(ekmmr))
     
     ekmmr <- kmmrout[[9]]/(mummr^2)
     
@@ -154,7 +154,7 @@ kmmr <- function(xyt,s.region,s.lambda,ds,ks="epanech",hs,correction="none",appr
                         as.integer(npt),as.double(ds),as.integer(nds),as.double(s.lambda),
                         as.integer(ker2),as.double(hs),as.double(wrs),as.double(wts),
                         as.double(wbi),as.double(wbimod),as.double(wss),as.integer(correc2),
-                        (ekmmr),PACKAGE="msfstpp")
+                        (ekmmr))
     
     ekmmr <- kmmrout[[16]]/(mummr^2)
     

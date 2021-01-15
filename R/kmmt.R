@@ -44,7 +44,7 @@ kmmt <- function(xyt,t.region,t.lambda,dt,kt="epanech",ht,correction="none",appr
     t.region <- c(tr[1]-0.01*tw,tr[2]+0.01*tw)
   }
   
-  xyt.inside <- intim(xyt,t.region)
+  xyt.inside <- .intim(xyt,t.region)
   
   if (missing(ht)){
     d <- dist(xyt.inside[,3])
@@ -80,7 +80,7 @@ kmmt <- function(xyt,t.region,t.lambda,dt,kt="epanech",ht,correction="none",appr
   
   if (appro2[1]==1){
     kmmtout <- .Fortran("kmmtcore",as.double(snorm),as.double(ptst),as.integer(npt),as.double(dt),
-                        as.integer(ndt),as.integer(ker2),as.double(ht),(ekmmt),PACKAGE="msfstpp")
+                        as.integer(ndt),as.integer(ker2),as.double(ht),(ekmmt))
     
     ekmmt <- kmmtout[[8]]/(mummt^2)
     
@@ -135,8 +135,7 @@ kmmt <- function(xyt,t.region,t.lambda,dt,kt="epanech",ht,correction="none",appr
     kmmtout <- .Fortran("kmmtcoreinh",as.double(snorm),as.double(ptst),as.integer(npt),
                         as.double(dt),as.integer(ndt),as.double(t.lambda),as.integer(ker2),
                         as.double(ht),as.double(wrt),as.double(wtt),as.double(wbit),
-                        as.double(wbimodt),as.double(wst),as.integer(correc2),(ekmmt),
-                        PACKAGE="msfstpp")
+                        as.double(wbimodt),as.double(wst),as.integer(correc2),(ekmmt))
     
     ekmmt <- kmmtout[[15]]/(mummt^2)
     
