@@ -8,7 +8,7 @@ Authors@R: c(person("Edith", "Gabriel", role=c("aut","cre"), email="edith.gabrie
              person("Francisco J", "Rodriguez-Cortes", role="aut", email="frrodriguezc@unal.edu.co"))
 Maintainer: Edith Gabriel <edith.gabriel@inrae.fr>
 Depends: R (>= 3.3.0), grDevices, graphics, rpanel, splancs
-Imports: KernSmooth, ggplot2, gridExtra, plot3D, rgl, spatstat, stats
+Imports: KernSmooth, ggplot2, gridExtra, plot3D, rgl, spatstat.core, spatstat.geom, stats
 Suggests: knitr(>= 1.11), rmarkdown(>= 0.8.1)
 Description: Many of the models encountered in applications of point process methods to the study of spatio-temporal phenomena are covered in 'stpp'. This package provides statistical tools for analyzing the global and local second-order properties of spatio-temporal point processes, including estimators of the space-time inhomogeneous K-function and pair correlation function. It also includes tools to get static and dynamic display of spatio-temporal point patterns. See Gabriel et al (2013) <doi:10.18637/jss.v053.i02>.
 License: GPL-3
@@ -18,7 +18,7 @@ RoxygenNote: 6.0.1
 BuildVignettes: True
 VignetteBuilder: knitr
 BugReports: https://github.com/stpp-GitHub-community
-Packaged: 2018-02-14 01:43:24 UTC; frajaroco
+Packaged: 2021-03-19 01:43:24 UTC; frajaroco
 Author: Edith Gabriel [aut, cre],
   Peter J Diggle [aut],
   Barry Rowlingson [aut],

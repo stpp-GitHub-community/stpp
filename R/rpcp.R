@@ -28,8 +28,23 @@
       t.distr <- cluster[2]
     }
   
+  xp <- s.region[,1]
+  yp <- s.region[,2]
+  nedges <- length(xp)
+  yp <- yp - min(yp) 
+  nxt <- c(2:nedges, 1)
+  dx <- xp[nxt] - xp
+  ym <- (yp + yp[nxt])/2
+  Areaxy <- -sum(dx * ym)
+  
+  if (Areaxy > 0){
+    bdry <- owin(poly = list(x = s.region[,1], y = s.region[,2]))
+  }else{
+    bdry <- owin(poly = list(x = s.region[,1][length(s.region[,1]):1], y = s.region[,2][length(s.region[,1]):1]))
+  }
+  
   t.region <- sort(t.region)
-  s.area <- areapl(s.region)
+  s.area <- area(bdry)
   t.area <- t.region[2]-t.region[1]
 
   if (larger.regions==0)
@@ -40,6 +55,22 @@
       M <- chull(s.larger)
       s.larger <- cbind(s.larger[M,1],s.larger[M,2])
     }
+  
+  xp.l <- s.larger[,1]
+  yp.l <- s.larger[,2]
+  nedges.l <- length(xp.l)
+  yp.l <- yp.l - min(yp.l) 
+  nxt.l <- c(2:nedges.l, 1)
+  dx.l <- xp.l[nxt.l] - xp.l
+  ym.l <- (yp.l + yp.l[nxt.l])/2
+  Areaxy.l <- -sum(dx.l * ym.l)
+  
+  if (Areaxy.l > 0){
+    bdry.l <- owin(poly = list(x = s.larger[,1], y = s.larger[,2]))
+  }else{
+    bdry.l <- owin(poly = list(x = s.larger[,1][length(s.larger[,1]):1], y = s.larger[,2][length(s.larger[,1]):1]))
+  }
+  
   t.larger <- c(t.region[1]-larger.regiont,t.region[2]+larger.regiont)
 
   if (t.larger[1]<0) t.larger[1] <- 0
@@ -49,12 +80,12 @@
       if (is.null(lambda)) stop("please specify either the number of parents or the intensity of parents process")
       if (is.function(lambda)) stop("please specify the number of parents")
       if (is.numeric(lambda))
-        lambda <- lambda*(areapl(s.larger)*(t.larger[2]-t.larger[1]))/(s.area*t.area)
+        lambda <- lambda*(area(bdry.l)*(t.larger[2]-t.larger[1]))/(s.area*t.area)
       npar <- rpois(1,lambda)
     }
   else npar <- nparents
 
-  if (is.null(lambda)) lambda <- (npar/(s.area*t.area))*(areapl(s.larger)*(t.larger[2]-t.larger[1]))/(s.area*t.area)
+  if (is.null(lambda)) lambda <- (npar/(s.area*t.area))*(area(bdry.l)*(t.larger[2]-t.larger[1]))/(s.area*t.area)
     
   if (is.null(npoints))
     {
@@ -236,8 +267,23 @@ rpcp <- function(s.region, t.region, nparents=NULL, npoints=NULL, lambda=NULL, m
       t.distr <- cluster[2]
     }
   
+  xp <- s.region[,1]
+  yp <- s.region[,2]
+  nedges <- length(xp)
+  yp <- yp - min(yp) 
+  nxt <- c(2:nedges, 1)
+  dx <- xp[nxt] - xp
+  ym <- (yp + yp[nxt])/2
+  Areaxy <- -sum(dx * ym)
+  
+  if (Areaxy > 0){
+    bdry <- owin(poly = list(x = s.region[,1], y = s.region[,2]))
+  }else{
+    bdry <- owin(poly = list(x = s.region[,1][length(s.region[,1]):1], y = s.region[,2][length(s.region[,1]):1]))
+  }
+  
   t.region <- sort(t.region)
-  s.area <- areapl(s.region)
+  s.area <- area(bdry)
   t.area <- t.region[2]-t.region[1]
   pattern <- list()
 
