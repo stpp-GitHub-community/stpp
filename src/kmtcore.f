@@ -6,7 +6,7 @@ C
 
        subroutine kmtcore(snorm,txy,n,t,nt,kt,ht,kmt)
 
-       implicit real*8(a-h,o-z)
+       implicit double precision (a-h,o-z)
 
        integer i,j,iv,n,nt,kt
        double precision wij,vij,ht,kernt,ktm,ktn,kmt,snorm,txy

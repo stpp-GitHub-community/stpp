@@ -7,7 +7,7 @@ C
       subroutine kmmrcoreinh(x,y,txy,n,s,ns,slambda,ks,hs,wrs,wts,
      +     wbi,wbimod,wss,edg,kmmr)
      
-      implicit real*8(a-h,o-z)
+      implicit double precision (a-h,o-z)
 
       integer i,j,iu,n,ns,ks,edg
       double precision inhwij,inhvij,hs,kerns,kmrminh,kmrninh,kmmr
