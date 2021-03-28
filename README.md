@@ -26,18 +26,18 @@ Ubuntu users can follow the instructions in this discussion on stackoverflow to 
 A BibTeX entry for LaTeX users is
 
 ```
-@misc{gdrrc00,
+@misc{gdrrc01,
 	author = {Edith Gabriel and Peter J. Diggle and Barry Rowlingson and Francisco J. Rodr\'iguez-Cort\'es},
 	title = {stpp: Space-Time Point Pattern Simulation, Visualisation and Analysis},
-	year = {2020},
-	note = {R package version 2.0-4},
+	year = {2021},
+	note = {R package version 2.0-5},
 	url = {https://cran.r-project.org/web/packages/stpp}}
 ```
 ### Autors:
 
-[Edith Gabriel, Avignon University, Avignon, France](http://edith.gabriel.pagesperso-orange.fr/Edith.html)
+[Edith Gabriel, Avignon University, Avignon, France](https://informatique-mia.inrae.fr/biosp/homepage-edith-gabriel)
 
-[Peter J. Diggle, Lancaster University, Lancaster, UK](https://www.lancaster.ac.uk/staff/diggle)
+[Peter J. Diggle, Lancaster University, Lancaster, UK](http://www.lancaster.ac.uk/staff/diggle/)
 
 [Barry Rowlingson, Lancaster University, Lancaster, UK](http://barry.rowlingson.com)
 
