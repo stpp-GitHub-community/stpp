@@ -17,7 +17,7 @@ Many of the models encountered in applications of point process methods to the s
 
 - [Baddeley, A., Rubak, E., Turner, R. (2015). Spatial Point Patterns: Methodology and Applications with R. CRC Press, Boca Raton.](https://www.routledge.com/Spatial-Point-Patterns-Methodology-and-Applications-with-R/Baddeley-Rubak-Turner/p/book/9781482210200/)
  
-- [Chan, G. and Wood A. (1997). An algorithm for simulating stationary Gaussian random fields. *Applied Statistics, Algorithm Section*, **46**, 171–181.](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/1467-9876.00057/)
+- [Chan, G. and Wood A. (1997). An algorithm for simulating stationary Gaussian random fields. *Applied Statistics, Algorithm Section*, **46**, 171–181.](https://rss.onlinelibrary.wiley.com/doi/abs/10.1111/1467-9876.00057)
 
 - [Chan, G. and Wood A. (1999). Simulation of stationary Gaussian vector fields. *Statistics and Computing*, **9**, 265–268.](https://link.springer.com/article/10.1023/A:1008903804954/)
 
@@ -27,14 +27,14 @@ Many of the models encountered in applications of point process methods to the s
 
 - [Gabriel E., Rowlingson B., Diggle P. (2013). stpp: an R package for plotting, simulating and analyzing Spatio-Temporal Point Patterns. *Journal of Statistical Software*, **53**(2), 1-29.](https://www.jstatsoft.org/article/view/v053i02/)
 
-- [Gabriel E., Diggle P. (2009). Second-order analysis of inhomogeneous spatio-temporal point process data. *Statistica Neerlandica*, *63*, 43–51.](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9574.2008.00407.x/)
+- [Gabriel E., Diggle P. (2009). Second-order analysis of inhomogeneous spatio-temporal point process data. *Statistica Neerlandica*, *63*, 43–51.](https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9574.2008.00407.x)
 
 - [Gabriel E. (2014). Estimating second-order characteristics of inhomogeneous spatio-temporal point processes: influence ofedge correction methods and intensity estimates. *Methodology and computing in Applied Probabillity*, **16**(2), 411–431.](https://link.springer.com/article/10.1007/s11009-013-9358-3/)
 
-- [Gneiting T. (2002). Nonseparable, stationary covariance functions for space-time data. *Journal of the American Statistical Association*, **97**, 590–600.](https://www.tandfonline.com/doi/abs/10.1198/016214502760047113/)
+- [Gneiting T. (2002). Nonseparable, stationary covariance functions for space-time data. *Journal of the American Statistical Association*, **97**, 590–600.](https://www.tandfonline.com/doi/abs/10.1198/016214502760047113)
 
 - [Gonzalez, J. A., Rodriguez-Cortes, F. J., Cronie, O. and Mateu, J. (2016). Spatio-temporal point process statistics: a review. *Spatial Statiscts*, **18**, 505–544.](https://www.sciencedirect.com/science/article/pii/S2211675316301130/)
 
-- [Siino, M., Rodriguez-Cortes, F. J., Mateu, J. and Adelfio, G. (2017). Testing for local structure in spatio-temporal point pattern data. *Environmetrics*. DOI: 10.1002/env.2463.](https://onlinelibrary.wiley.com/doi/abs/10.1002/env.2463/)
+- [Siino, M., Rodriguez-Cortes, F. J., Mateu, J. and Adelfio, G. (2017). Testing for local structure in spatio-temporal point pattern data. *Environmetrics*. DOI: 10.1002/env.2463.](https://onlinelibrary.wiley.com/doi/abs/10.1002/env.2463)
 
 - [Stoyan, D., Rodriguez-Cortes, F. J., Mateu, J., and Gille, W. (2017). Mark variograms for spatio-temporal point processes. *Spatial Statistics*. **20**, 125-147.](https://www.sciencedirect.com/science/article/pii/S2211675317300696/)
