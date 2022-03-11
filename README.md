@@ -36,9 +36,9 @@ A BibTeX entry for LaTeX users is
 ```
 ### Autors:
 
-[Edith Gabriel, Avignon University, Avignon, France](https://informatique-mia.inrae.fr/biosp/homepage-edith-gabriel/)
+[Edith Gabriel, Avignon University, Avignon, France](https://biosp.mathnum.inrae.fr/homepage-edith-gabriel/)
 
-[Peter J. Diggle, Lancaster University, Lancaster, UK](http://www.lancaster.ac.uk/staff/diggle/)
+[Peter J. Diggle, Lancaster University, Lancaster, UK](https://www.lancaster.ac.uk/staff/diggle/)
 
 [Barry Rowlingson, Lancaster University, Lancaster, UK](http://barry.rowlingson.com/)
 
