@@ -31,7 +31,7 @@ A BibTeX entry for LaTeX users is
 	author = {Edith Gabriel and Peter J. Diggle and Barry Rowlingson and Francisco J. Rodr\'iguez-Cort\'es},
 	title = {stpp: Space-Time Point Pattern Simulation, Visualisation and Analysis},
 	year = {2022},
-	note = {R package version 2.0-6},
+	note = {R package version 2.0-7},
 	url = {https://cran.r-project.org/web/packages/stpp}}
 ```
 ### Autors:
