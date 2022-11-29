@@ -10,3 +10,9 @@ CHANGES IN stpp VERSION 2.0.5
 * The function 'kmmt' have been included
 * The function 'kmr' have been included
 * The function 'kmt' have been included
+
+--------------------------------------------------------------------------------
+
+CHANGES IN stpp VERSION 2.0.6
+
+* Updated dependency on spatstat.explore
