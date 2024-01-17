@@ -96,7 +96,7 @@ kmmr <- function(xyt,s.region,s.lambda,ds,ks="epanech",hs,correction="none",appr
                         as.integer(npt),as.double(ds),as.integer(nds),as.integer(ker2)
                         ,as.double(hs),(ekmmr))
     
-    ekmmr <- kmmrout[[9]]/(mummr^2)
+    ekmmr <- kmmrout[[9]]
     
     invisible(return(list(ekmmr=ekmmr,ds=ds,kernel=kernel,kmmrtheo=kmmrtheo)))
   } else {
