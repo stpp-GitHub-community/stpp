@@ -86,7 +86,7 @@ kmmr <- function(xyt,s.region,s.lambda,ds,ks="epanech",hs,correction="none",appr
   kmmrtheo <- 1
   npt <- pxy$n[1]
   nds <- length(ds)
-  mummr <- mean(ptst)
+  cmm <- sum(outer(ptst,ptst))/(npt^2)
   ekmmr <- rep(0,nds)
   
   storage.mode(ekmmr) <- "double"
@@ -96,7 +96,7 @@ kmmr <- function(xyt,s.region,s.lambda,ds,ks="epanech",hs,correction="none",appr
                         as.integer(npt),as.double(ds),as.integer(nds),as.integer(ker2)
                         ,as.double(hs),(ekmmr))
     
-    ekmmr <- kmmrout[[9]]
+    ekmmr <- kmmrout[[9]]/cmm
     
     invisible(return(list(ekmmr=ekmmr,ds=ds,kernel=kernel,kmmrtheo=kmmrtheo)))
   } else {
@@ -156,7 +156,7 @@ kmmr <- function(xyt,s.region,s.lambda,ds,ks="epanech",hs,correction="none",appr
                         as.double(wbi),as.double(wbimod),as.double(wss),as.integer(correc2),
                         (ekmmr))
     
-    ekmmr <- kmmrout[[16]]
+    ekmmr <- kmmrout[[16]]/cmm
     
     invisible(return(list(ekmmr=ekmmr,ds=ds,kernel=kernel,kmmrtheo=kmmrtheo,s.lambda=s.lambda)))
   }
