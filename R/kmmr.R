@@ -86,7 +86,7 @@ kmmr <- function(xyt,s.region,s.lambda,ds,ks="epanech",hs,correction="none",appr
   kmmrtheo <- 1
   npt <- pxy$n[1]
   nds <- length(ds)
-  cmm <- sum(outer(ptst,ptst))/(npt^2)
+  cmm <- mean(ptst)^2
   ekmmr <- rep(0,nds)
   
   storage.mode(ekmmr) <- "double"
