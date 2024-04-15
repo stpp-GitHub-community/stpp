@@ -35,8 +35,8 @@ C
                    kerns=qkernel((s(iu)-hij)/hs,hs)
               end if
              if (kerns.ne.0d0) then
-                    wij=mij*kerns/(two*pi*s(iu))
-                    vij=kerns/(two*pi*s(iu))
+                    wij=mij*kerns
+                    vij=kerns
                     krm(iu)=krm(iu)+wij
                     krn(iu)=krn(iu)+vij
              end if
