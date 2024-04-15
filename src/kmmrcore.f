@@ -26,7 +26,7 @@ C
           do j=1,n
            if (j.ne.i) then
             hij=sqrt(((xi-x(j))**two)+((yi-y(j))**two))
-            mij=ti*txy(j)
+            mij=abs(ti*txy(j))
               if (ks(1).eq.1) then
                kerns=boxkernel((s(iu)-hij)/hs,hs)
                 else if (ks(2).eq.1) then
