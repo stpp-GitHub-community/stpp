@@ -69,8 +69,11 @@ kmmr <- function(xyt,s.region,s.lambda,ds,ks="epanech",hs,correction="none",appr
   
   pxy <- ppp(x=ptsx,y=ptsy,window=bsw)  
   
+ frac = 1
+  
   if (missing(hs)){
-    hs <- bw.stoyan(pxy)
+    d = dist(pxy)
+    hs = dpik(d, kernel = ks, range.x = c(min(d), max(d)/frac))
   }
   
   if (missing(ds)){
@@ -86,7 +89,7 @@ kmmr <- function(xyt,s.region,s.lambda,ds,ks="epanech",hs,correction="none",appr
   kmmrtheo <- 1
   npt <- pxy$n[1]
   nds <- length(ds)
-  cmm <- ((range(ptst)[2]-range(ptst)[1])/2)^2
+  cmm <- mean(ptst)^2
   ekmmr <- rep(0,nds)
   
   storage.mode(ekmmr) <- "double"
