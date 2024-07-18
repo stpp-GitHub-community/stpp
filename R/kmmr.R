@@ -80,10 +80,7 @@ kmmr <- function(xyt,s.region,s.lambda,ds,ks="epanech",hs,correction="none",appr
   if (missing(ds)){
     rect <- as.rectangle(bsw)
     maxd <- min(diff(rect$xrange),diff(rect$yrange))/4
-    ds <- seq(hs, maxd,len=100)[-1]
-    ds <- sort(ds)
-  }
-  if(ds[1]==0){ds <- ds[-1]
+    ds <- seq(0, maxd,len=100)
   }
   
   kernel <- c(ks=ks,hs=hs)
