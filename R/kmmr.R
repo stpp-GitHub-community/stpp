@@ -72,7 +72,8 @@ kmmr <- function(xyt,s.region,s.lambda,ds,ks="epanech",hs,correction="none",appr
  frac = 1
   
   if (missing(hs)){
-    d = dist(pxy)
+    ppxy <- cbind(ptsx,ptsy)
+    d = dist(ppxy)
     hs = dpik(d, kernel = ks, range.x = c(min(d), max(d)/frac))
   }
   
