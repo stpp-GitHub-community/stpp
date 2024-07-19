@@ -114,8 +114,6 @@ c translate
 
       end
 
-
-
 c--------------------------------------------------------------------
 c
 c     boxkernel
@@ -124,7 +122,7 @@ c--------------------------------------------------------------------
 
        function boxkernel(x,h)
 
-       implicit double precision (a-h,o-z)
+       implicit real*8 (a-h,o-z)
 
        double precision x, h
 
@@ -146,9 +144,9 @@ c--------------------------------------------------------------------
 
        function ekernel(x,h)
 
-       implicit double precision (a-h,o-z)
+       implicit real*8 (a-h,o-z)
 
-       double precision x
+       double precision x, h
 
        if (dabs(x).le.1) then
            ekernel=(3d0/4d0)*(1-x**2)
@@ -168,9 +166,9 @@ c--------------------------------------------------------------------
 
        function gausskernel(x,h)
 
-       implicit double precision (a-h,o-z)
+       implicit real*8 (a-h,o-z)
 
-       double precision x
+       double precision x, h
        pi=3.14159265d0
        
        gausskernel=exp(-(x**2)/2d0)/sqrt(pi*2d0)
@@ -188,7 +186,7 @@ c--------------------------------------------------------------------
 
        function qkernel(x,h)
 
-       implicit double precision (a-h,o-z)
+       implicit real*8 (a-h,o-z)
 
        double precision x, h
 
