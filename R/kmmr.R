@@ -69,96 +69,95 @@ kmmr <- function(xyt,s.region,s.lambda,ds,ks="epanech",hs,correction="none",appr
   
   pxy <- ppp(x=ptsx,y=ptsy,window=bsw)  
   
- frac = 1
-  
   if (missing(hs)){
-    ppxy <- cbind(ptsx,ptsy)
-    d = dist(ppxy)
-    hs = dpik(d, kernel = ks, range.x = c(min(d), max(d)/frac))
+   hs <- bw.stoyan(pxy)
   }
   
   if (missing(ds)){
     rect <- as.rectangle(bsw)
     maxd <- min(diff(rect$xrange),diff(rect$yrange))/4
     ds <- seq(0, maxd,len=100)
+    ds <- sort(ds)
+  }
+  if(ds[1]==0){ds <- ds[-1]
   }
   
   kernel <- c(ks=ks,hs=hs)
   kmmrtheo <- 1
   npt <- pxy$n[1]
   nds <- length(ds)
-  cmm <- mean(ptst)^2
+  mummr <- mean(ptst)
   ekmmr <- rep(0,nds)
-  
+
   storage.mode(ekmmr) <- "double"
   
   if (appro2[1]==1){
     kmmrout <- .Fortran("kmmrcore",as.double(ptsx),as.double(ptsy),as.double(ptst),
                         as.integer(npt),as.double(ds),as.integer(nds),as.integer(ker2)
-                        ,as.double(hs),(ekmmr))
+                        ,as.double(hs),(ekmmr),PACKAGE="msfstpp")
     
-    ekmmr <- kmmrout[[9]]/cmm
+    ekmmr <- kmmrout[[9]]/(mummr^2)
     
     invisible(return(list(ekmmr=ekmmr,ds=ds,kernel=kernel,kmmrtheo=kmmrtheo)))
   } else {
     
-    if(missing(s.lambda)){
-      misl <- 1
-      s.lambda <- rep(npt/area,npt)
-    } else {
-      misl <- 0
-      if (length(s.lambda)==1){
-        s.lambda <- rep(s.lambda,npt)
-      }
-    }
-    
-    wrs <- array(0,dim=c(npt,npt))
-    wts <- array(0,dim=c(npt,npt))
-    wbi <- array(0,dim=c(npt,nds))
-    wbimod <- array(0,dim=c(npt,nds))
-    wss <- rep(0,nds)
-    
-    # correction="isotropic"
-    if(correction=="isotropic"){
-      wisot <- edge.Ripley(pxy,pairdist(pxy))
-      wrs <- 1/wisot
-    }
-    
-    # correction="translate"
-    if(correction=="translate"){
-      wtras <- edge.Trans(pxy)
-      wts <- 1/wtras
-    }
-    
-    #  correction=="border" or "modified border
-    if(any(correction=="border")|any(correction=="modified.border")){
-      bi <- bdist.points(pxy)
-      for(i in 1:nds) { 
-        wbi[,i] <- (bi>ds[i])/sum((bi>ds[i])/s.lambda)
-        wbimod[,i] <- (bi>ds[i])/eroded.areas(bsw,ds[i])
-      }
-      wbi[is.na(wbi)] <- 0
-      wbimod[is.na(wbimod)] <- 0
-    }
-    
-    # correction="setcovf"
-    if(correction=="setcovf"){
-      for (i in 1:nds){
-        wss[i] <- area-((pert*ds[i])/pi)
-      }
-      wss <- 1/wss
-    }
-    
-    options(warn = 0)
-    
-    kmmrout <- .Fortran("kmmrcoreinh",as.double(ptsx),as.double(ptsy),as.double(ptst),
-                        as.integer(npt),as.double(ds),as.integer(nds),as.double(s.lambda),
-                        as.integer(ker2),as.double(hs),as.double(wrs),as.double(wts),
-                        as.double(wbi),as.double(wbimod),as.double(wss),as.integer(correc2),
-                        (ekmmr))
-    
-    ekmmr <- kmmrout[[16]]/cmm
-    
-    invisible(return(list(ekmmr=ekmmr,ds=ds,kernel=kernel,kmmrtheo=kmmrtheo,s.lambda=s.lambda)))
+  if(missing(s.lambda)){
+    misl <- 1
+    s.lambda <- rep(npt/area,npt)
+  } else {
+    misl <- 0
+  if (length(s.lambda)==1){
+    s.lambda <- rep(s.lambda,npt)
   }
+    }
+    
+  wrs <- array(0,dim=c(npt,npt))
+  wts <- array(0,dim=c(npt,npt))
+  wbi <- array(0,dim=c(npt,nds))
+  wbimod <- array(0,dim=c(npt,nds))
+  wss <- rep(0,nds)
+
+  # correction="isotropic"
+  if(correction=="isotropic"){
+    wisot <- edge.Ripley(pxy,pairdist(pxy))
+    wrs <- 1/wisot
+    }
+  
+  # correction="translate"
+  if(correction=="translate"){
+    wtras <- edge.Trans(pxy)
+    wts <- 1/wtras
+    }
+  
+  #  correction=="border" or "modified border
+  if(any(correction=="border")|any(correction=="modified.border")){
+    bi <- bdist.points(pxy)
+    for(i in 1:nds) { 
+      wbi[,i] <- (bi>ds[i])/sum((bi>ds[i])/s.lambda)
+      wbimod[,i] <- (bi>ds[i])/eroded.areas(bsw,ds[i])
+     }
+    wbi[is.na(wbi)] <- 0
+    wbimod[is.na(wbimod)] <- 0
+  }
+  
+  # correction="setcovf"
+  if(correction=="setcovf"){
+    for (i in 1:nds){
+      wss[i] <- area-((pert*ds[i])/pi)
+      }
+    wss <- 1/wss
+  }
+  
+  options(warn = 0)
+  
+  kmmrout <- .Fortran("kmmrcoreinh",as.double(ptsx),as.double(ptsy),as.double(ptst),
+                     as.integer(npt),as.double(ds),as.integer(nds),as.double(s.lambda),
+                     as.integer(ker2),as.double(hs),as.double(wrs),as.double(wts),
+                     as.double(wbi),as.double(wbimod),as.double(wss),as.integer(correc2),
+                     (ekmmr),PACKAGE="msfstpp")
+  
+   ekmmr <- kmmrout[[16]]/(mummr^2)
+   
+   invisible(return(list(ekmmr=ekmmr,ds=ds,kernel=kernel,kmmrtheo=kmmrtheo,s.lambda=s.lambda)))
+   }
 }
