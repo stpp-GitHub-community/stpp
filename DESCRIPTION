@@ -17,7 +17,8 @@ NeedsCompilation: yes
 RoxygenNote: 6.0.1
 BuildVignettes: True
 VignetteBuilder: knitr
-BugReports: https://github.com/stpp-GitHub-community
+URL: https://github.com/stpp-GitHub-community/stpp/
+BugReports: https://github.com/stpp-GitHub-community/stpp/issues
 Author: Edith Gabriel [aut, cre],
   Peter J Diggle [aut],
   Barry Rowlingson [aut],
